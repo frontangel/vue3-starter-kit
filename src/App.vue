@@ -1,30 +1,43 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import { useRoute } from 'vue-router'
+import { computed, onBeforeUnmount, ref } from 'vue'
+import GlobalProvideConfig from '~/components/Provide/global-provide-config.vue'
+import VaNotify from '~/components/Notifications/VaNotify.vue'
+import { useEventBus } from '@vueuse/core'
+import { INotificationOptions } from '~/interfaces/notification.interface.ts'
+
+const route = useRoute()
+
+const notificationsBus = useEventBus<string>('notification')
+const unsubscribe = notificationsBus.on(notificationsListener)
+const notifyRef = ref()
+
+function notificationsListener(event: string, payload: any) {
+  switch (event) {
+    case 'notify':
+      notifyRef.value.showMessage(payload as INotificationOptions)
+      break
+    default:
+      console.log(event, payload)
+      break
+  }
+}
+
+const layout = computed(() => {
+  return `${route?.meta?.layout || `Default`}Layout`
+})
+
+onBeforeUnmount(() => {
+  unsubscribe()
+})
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <global-provide-config :options="{ allFieldsClearable: false }">
+    <component :is="layout">
+      <router-view />
+    </component>
+  </global-provide-config>
+  <va-notify ref="notifyRef" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>

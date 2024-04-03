@@ -1,0 +1,8 @@
+input {
+  border-radius: var(--input-border-radius);
+  border-width: var(--input-border-width);
+  display: inline-flex;
+  width: 100%;
+  padding: 0;
+  height: calc(var(--input-height) - 2px);
+}

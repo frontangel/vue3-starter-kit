@@ -1,0 +1,49 @@
+@use "config";
+.va-form {
+  &__item {
+    border: var(--input-border-width) solid var(--input-border-color);
+    border-radius: var(--input-border-radius);
+    padding: 0 var(--h-padding);
+    height: var(--input-height);
+    gap: 0.5rem;
+    input {
+      outline: none;
+      --input-border-radius: 0;
+      --input-border-width: 0;
+    }
+    &-wrapper {
+      display: flex;
+      width: 100%;
+    }
+    &-suffix, &-prefix {
+      display: flex;
+      align-items: center;
+      color: var(--dark-info-color);
+      .va-button {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        padding: 0 0.25rem;
+      }
+    }
+    &-prefix {
+      margin-left: -0.25rem;
+    }
+    &-suffix {
+      margin-right: -0.25rem;
+    }
+    &.is-error {
+      --input-border-color: var(--danger-color);
+    }
+    &.is-disabled {
+      background-color: var(--input-disabled-bg);
+      opacity: 0.6;
+    }
+  }
+}
+
+.va-field-control {
+  &__error {
+    color: var(--danger-color);
+  }
+}

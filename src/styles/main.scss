@@ -1,0 +1,17 @@
+@use "root";
+@use "dark";
+@use "animations";
+@use "notifications";
+@use "inputs";
+@use "buttons";
+@use "icons";
+@use "forms";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}

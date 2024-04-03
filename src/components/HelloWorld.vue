@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useThemeStore } from '~/store/theme.store.ts'
 
 defineProps<{ msg: string }>()
+
+const themeStore = useThemeStore();
 
 const count = ref(0)
 </script>
@@ -11,6 +14,8 @@ const count = ref(0)
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
+    <button type="button" @click="themeStore.toggleTheme">{{ themeStore.theme }}</button>
+    <button type="button" @click="themeStore.setSystemTheme">{{ themeStore.theme }}</button>
     <p>
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
@@ -30,9 +35,3 @@ const count = ref(0)
   </p>
   <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
 </template>
-
-<style scoped>
-.read-the-docs {
-  color: #888;
-}
-</style>
