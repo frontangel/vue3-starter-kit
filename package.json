@@ -18,6 +18,7 @@
     "axios": "^1.6.8",
     "lodash": "^4.17.21",
     "pinia": "^2.1.7",
+    "prismjs": "^1.29.0",
     "vue": "^3.4.21",
     "vue-router": "4"
   },
@@ -25,6 +26,7 @@
     "@faker-js/faker": "^8.4.1",
     "@types/axios-mock-adapter": "^1.10.0",
     "@types/lodash": "^4.17.0",
+    "@types/prismjs": "^1.26.3",
     "@unocss/preset-attributify": "^0.58.5",
     "@unocss/preset-uno": "^0.58.5",
     "@vitejs/plugin-vue": "^5.0.4",

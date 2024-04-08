@@ -4,10 +4,8 @@
   // global
   --info-color: #{map-get(config.$colors, 'info')};
   --danger-color:  #{map-get(config.$colors, 'danger')};
-
-
-
   --primary-color:  #{map-get(config.$colors, 'primary')};
+
   --primary-color-lighten:  #{lighten(map-get(config.$colors, 'primary'), 5%)};
   --white-color: #fff;
   --dark-color: #333;
@@ -35,7 +33,12 @@
   --button-border-radius: var(--border-radius);
   --button-border-color: var(--dark-info-color);
   --button-text-color: var(--dark-color);
-  --button-height: #{map-get(config.$controls-size, 'height')}
+  --button-height: #{map-get(config.$controls-size, 'height')};
+
+  // nav
+  --menu-link-color: var(--dark-info-color);
+  --menu-link-color-hover: var(--dark-color);
+  --menu-link-color-active: var(--primary-color);
 }
 
 
