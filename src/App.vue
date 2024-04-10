@@ -5,7 +5,9 @@ import GlobalProvideConfig from '~/components/Provide/global-provide-config.vue'
 import VaNotify from '~/components/Notifications/VaNotify.vue'
 import { useEventBus } from '@vueuse/core'
 import { INotificationOptions } from '~/interfaces/notification.interface.ts'
+import { useConfigStore } from '~/store/config.store.ts'
 
+const configStore = useConfigStore()
 const route = useRoute()
 
 const notificationsBus = useEventBus<string>('notification')
@@ -26,14 +28,13 @@ function notificationsListener(event: string, payload: any) {
 const layout = computed(() => {
   return `${route?.meta?.layout || `Default`}Layout`
 })
-
 onBeforeUnmount(() => {
   unsubscribe()
 })
 </script>
 
 <template>
-  <global-provide-config :options="{ allFieldsClearable: false }">
+  <global-provide-config :options="configStore.$state">
     <component :is="layout">
       <router-view />
     </component>

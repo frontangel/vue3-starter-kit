@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://localhost:5173/guide/config-provider -->
+<html lang="en" data-theme="light"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="module" src="./Vue RND - Config Provider_files/client"></script>
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="http://localhost:5173/src/assets/icons/vite.svg">
+    <link rel="manifest" href="http://localhost:5173/manifest.json">
+    <title>Vue RND - Config Provider</title>
+  <style type="text/css" data-vite-dev-id="/Users/zslayer/Work/vue-vite-ts/node_modules/@unocss/reset/sanitize/sanitize.css">/* Document
+ * ========================================================================== */
+
+/**
+ * 1. Add border box sizing in all browsers (opinionated).
+ * 2. Backgrounds do not repeat by default (opinionated).
+ */
+
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  background-repeat: no-repeat; /* 2 */
+}
+
+/**
+ * 1. Add text decoration inheritance in all browsers (opinionated).
+ * 2. Add vertical alignment inheritance in all browsers (opinionated).
+ */
+
+::before,
+::after {
+  text-decoration: inherit; /* 1 */
+  vertical-align: inherit; /* 2 */
+}
+
+/**
+ * 1. Use the default cursor in all browsers (opinionated).
+ * 2. Change the line height in all browsers (opinionated).
+ * 3. Breaks words to prevent overflow in all browsers (opinionated).
+ * 4. Use a 4-space tab width in all browsers (opinionated).
+ * 5. Remove the grey highlight on links in iOS (opinionated).
+ * 6. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+:where(:root) {
+  cursor: default; /* 1 */
+  line-height: 1.5; /* 2 */
+  overflow-wrap: break-word; /* 3 */
+  -moz-tab-size: 4; /* 4 */
+  tab-size: 4; /* 4 */
+  -webkit-tap-highlight-color: transparent; /* 5 */
+  -webkit-text-size-adjust: 100%; /* 6 */
+}
+
+/* Sections
+ * ========================================================================== */
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+
+:where(body) {
+  margin: 0;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Edge, Firefox, and Safari.
+ */
+
+:where(h1) {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+ * ========================================================================== */
+
+/**
+ * Remove the margin on nested lists in Chrome, Edge, and Safari.
+ */
+
+:where(dl, ol, ul) :where(dl, ol, ul) {
+  margin: 0;
+}
+
+/**
+ * 1. Correct the inheritance of border color in Firefox.
+ * 2. Add the correct box sizing in Firefox.
+ */
+
+:where(hr) {
+  color: inherit; /* 1 */
+  height: 0; /* 2 */
+}
+
+/**
+ * Remove the list style on navigation lists in all browsers (opinionated).
+ */
+
+:where(nav) :where(ol, ul) {
+  list-style-type: none;
+  padding: 0;
+}
+
+/**
+ * Prevent VoiceOver from ignoring list semantics in Safari (opinionated).
+ */
+
+:where(nav li)::before {
+  content: "\200B";
+  float: left;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ * 3. Prevent overflow of the container in all browsers (opinionated).
+ */
+
+:where(pre) {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+  overflow: auto; /* 3 */
+}
+
+/* Text-level semantics
+ * ========================================================================== */
+
+/**
+ * Add the correct text decoration in Safari.
+ */
+
+:where(abbr[title]) {
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+:where(b, strong) {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+:where(code, kbd, samp) {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+:where(small) {
+  font-size: 80%;
+}
+
+/* Embedded content
+ * ========================================================================== */
+
+/*
+ * Change the alignment on media elements in all browsers (opinionated).
+ */
+
+:where(audio, canvas, iframe, img, svg, video) {
+  vertical-align: middle;
+}
+
+/**
+ * Remove the border on iframes in all browsers (opinionated).
+ */
+
+:where(iframe) {
+  border-style: none;
+}
+
+/**
+ * Change the fill color to match the text color in all browsers (opinionated).
+ */
+
+:where(svg:not([fill])) {
+  fill: currentColor;
+}
+
+/* Tabular data
+ * ========================================================================== */
+
+/**
+ * 1. Collapse border spacing in all browsers (opinionated).
+ * 2. Correct table border color inheritance in all Chrome, Edge, and Safari.
+ * 3. Remove text indentation from table contents in Chrome, Edge, and Safari.
+ */
+
+:where(table) {
+  border-collapse: collapse; /* 1 */
+  border-color: inherit; /* 2 */
+  text-indent: 0; /* 3 */
+}
+
+/* Forms
+ * ========================================================================== */
+
+/**
+ * Remove the margin on controls in Safari.
+ */
+
+:where(button, input, select) {
+  margin: 0;
+}
+
+/**
+ * Correct the inability to style buttons in iOS and Safari.
+ */
+
+:where(button, [type="button" i], [type="reset" i], [type="submit" i]) {
+  -webkit-appearance: button;
+}
+
+/**
+ * Change the inconsistent appearance in all browsers (opinionated).
+ */
+
+:where(fieldset) {
+  border: 1px solid #a0a0a0;
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Edge, and Firefox.
+ */
+
+:where(progress) {
+  vertical-align: baseline;
+}
+
+/**
+ * 1. Remove the margin in Firefox and Safari.
+ * 3. Change the resize direction in all browsers (opinionated).
+ */
+
+:where(textarea) {
+  margin: 0; /* 1 */
+  resize: vertical; /* 3 */
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome, Edge, and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+:where([type="search" i]) {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Safari.
+ */
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+/**
+ * Remove the inner padding in Chrome, Edge, and Safari on macOS.
+ */
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style upload buttons in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+ * ========================================================================== */
+
+/*
+ * Add the correct styles in Safari.
+ */
+
+:where(dialog) {
+  background-color: white;
+  border: solid;
+  color: black;
+  height: -moz-fit-content;
+  height: fit-content;
+  left: 0;
+  margin: auto;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+:where(dialog:not([open])) {
+  display: none;
+}
+
+/*
+ * Add the correct display in Safari.
+ */
+
+:where(details > summary:first-of-type) {
+  display: list-item;
+}
+
+/* Accessibility
+ * ========================================================================== */
+
+/**
+ * Change the cursor on busy elements in all browsers (opinionated).
+ */
+
+:where([aria-busy="true" i]) {
+  cursor: progress;
+}
+
+/*
+ * Change the cursor on control elements in all browsers (opinionated).
+ */
+
+:where([aria-controls]) {
+  cursor: pointer;
+}
+
+/*
+ * Change the cursor on disabled, not-editable, or otherwise
+ * inoperable elements in all browsers (opinionated).
+ */
+
+:where([aria-disabled="true" i], [disabled]) {
+  cursor: not-allowed;
+}
+
+/*
+ * Change the display on visually hidden accessible elements
+ * in all browsers (opinionated).
+ */
+
+:where([aria-hidden="false" i][hidden]) {
+  display: initial;
+}
+
+:where([aria-hidden="false" i][hidden]:not(:focus)) {
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+</style><style type="text/css" data-vite-dev-id="/Users/zslayer/Work/vue-vite-ts/node_modules/@unocss/reset/sanitize/assets.css">/**
+ * Restrict sizing to the page width in all browsers (opinionated).
+ */
+
+:where(iframe, img, input, video, select, textarea) {
+  height: auto;
+  max-width: 100%;
+}
+</style><style type="text/css" data-vite-dev-id="/Users/zslayer/Work/vue-vite-ts/node_modules/@unocss/reset/sanitize/forms.css">/**
+ * 1. Change the inconsistent appearance in all browsers (opinionated).
+ * 2. Add typography inheritance in all browsers (opinionated).
+ */
+
+:where(button, input, select, textarea) {
+  background-color: transparent; /* 1 */
+  border: 1px solid WindowFrame; /* 1 */
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  letter-spacing: inherit; /* 2 */
+  padding: 0.25em 0.375em; /* 1 */
+}
+
+/**
+ * Change the inconsistent appearance in all browsers (opinionated).
+ */
+
+:where(select) {
+  appearance: none;
+  background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E") no-repeat right center / 1em;
+  border-radius: 0;
+  padding-right: 1em;
+}
+
+/**
+ * Don't show the arrow for multiple choice selects
+ */
+
+:where(select[multiple]) {
+  background-image: none;
+}
+
+/**
+ * Remove the border and padding in all browsers (opinionated).
+ */
+
+:where([type="color" i], [type="range" i]) {
+  border-width: 0;
+  padding: 0;
+}
+</style><style type="text/css" data-vite-dev-id="/Users/zslayer/Work/vue-vite-ts/node_modules/@unocss/reset/sanitize/typography.css">/**
+ * Use the default user interface font in all browsers (opinionated).
+ */
+
+html {
+  font-family:
+    system-ui,
+    /* macOS 10.11-10.12 */ -apple-system,
+    /* Windows 6+ */ "Segoe UI",
+    /* Android 4+ */ "Roboto",
+    /* Ubuntu 10.10+ */ "Ubuntu",
+    /* Gnome 3+ */ "Cantarell",
+    /* KDE Plasma 5+ */ "Noto Sans",
+    /* fallback */ sans-serif,
+    /* macOS emoji */ "Apple Color Emoji",
+    /* Windows emoji */ "Segoe UI Emoji",
+    /* Windows emoji */ "Segoe UI Symbol",
+    /* Linux emoji */ "Noto Color Emoji";
+}
+
+/**
+ * Use the default monospace user interface font in all browsers (opinionated).
+ */
+
+code,
+kbd,
+samp,
+pre {
+  font-family:
+    ui-monospace,
+    /* macOS 10.10+ */ "Menlo",
+    /* Windows 6+ */ "Consolas",
+    /* Android 4+ */ "Roboto Mono",
+    /* Ubuntu 10.10+ */ "Ubuntu Monospace",
+    /* KDE Plasma 5+ */ "Noto Mono",
+    /* KDE Plasma 4+ */ "Oxygen Mono",
+    /* Linux/OpenOffice fallback */ "Liberation Mono",
+    /* fallback */ monospace,
+    /* macOS emoji */ "Apple Color Emoji",
+    /* Windows emoji */ "Segoe UI Emoji",
+    /* Windows emoji */ "Segoe UI Symbol",
+    /* Linux emoji */ "Noto Color Emoji";
+}
+</style><style type="text/css" data-vite-dev-id="/Users/zslayer/Work/vue-vite-ts/node_modules/@unocss/reset/sanitize/reduce-motion.css">/*
+ * 1. Remove animations when motion is reduced (opinionated).
+ * 2. Remove fixed background attachments when motion is reduced (opinionated).
+ * 3. Remove timed scrolling behaviors when motion is reduced (opinionated).
+ * 4. Remove transitions when motion is reduced (opinionated).
+ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important; /* 1 */
+    animation-duration: 1ms !important; /* 1 */
+    animation-iteration-count: 1 !important; /* 1 */
+    background-attachment: initial !important; /* 2 */
+    scroll-behavior: auto !important; /* 3 */
+    transition-delay: 0s !important; /* 4 */
+    transition-duration: 0s !important; /* 4 */
+  }
+}
+</style><style type="text/css" data-vite-dev-id="/Users/zslayer/Work/vue-vite-ts/node_modules/@unocss/reset/sanitize/system-ui.css">/**
+ * Add the correct system-ui font-family in Firefox.
+ */
+
+@font-face {
+  font-family: system-ui;
+  src: local(".AppleSystemUIFont"), local("Segoe UI"), local("Ubuntu"), local("Roboto-Regular"), local("HelveticaNeue");
+}
+
+@font-face {
+  font-family: system-ui;
+  font-style: italic;
+  src: local(".AppleSystemUIFont"), local("Segoe UI Italic"), local("Ubuntu-Italic"), local("Roboto-Italic"), local("HelveticaNeue-Italic");
+}
+
+@font-face {
+  font-family: system-ui;
+  font-weight: bold;
+  src: local(".AppleSystemUIFont"), local("Segoe UI Bold"), local("Ubuntu-Bold"), local("Roboto-Bold"), local("HelveticaNeue-Bold");
+}
+
+@font-face {
+  font-family: system-ui;
+  font-style: italic;
+  font-weight: bold;
+  src: local(".AppleSystemUIFont"), local("Segoe UI Bold Italic"), local("Ubuntu-BoldItalic"), local("Roboto-BoldItalic"), local("HelveticaNeue-BoldItalic");
+}
+</style><style type="text/css" data-vite-dev-id="/__uno.css">__uno_hash_205c35{--:'';}/* layer: preflights */
+*,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgb(0 0 0 / 0);--un-ring-shadow:0 0 rgb(0 0 0 / 0);--un-shadow-inset: ;--un-shadow:0 0 rgb(0 0 0 / 0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgb(147 197 253 / 0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: ;}::backdrop{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgb(0 0 0 / 0);--un-ring-shadow:0 0 rgb(0 0 0 / 0);--un-shadow-inset: ;--un-shadow:0 0 rgb(0 0 0 / 0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgb(147 197 253 / 0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: ;}
+/* layer: default */
+.mb-1{margin-bottom:0.25rem;}
+.mb-8{margin-bottom:2rem;}
+.hidden{display:none;}
+[size~="\31 6"]{width:4rem;height:4rem;}
+[size~="\34 0"]{width:10rem;height:10rem;}
+.flex{display:flex;}
+.items-center{align-items:center;}
+.justify-end{justify-content:flex-end;}
+@keyframes __un_qm{0%{box-shadow:inset 4px 4px #ff1e90, inset -4px -4px #ff1e90}100%{box-shadow:inset 8px 8px #3399ff, inset -8px -8px #3399ff}}
+.\?{animation:__un_qm 0.5s ease-in-out alternate infinite;}
+@keyframes __un_qm{0%{box-shadow:inset 4px 4px #ff1e90, inset -4px -4px #ff1e90}100%{box-shadow:inset 8px 8px #3399ff, inset -8px -8px #3399ff}}
+[\?=""]{animation:__un_qm 0.5s ease-in-out alternate infinite;}</style><style type="text/css" data-vite-dev-id="/Users/zslayer/Work/vue-vite-ts/src/styles/main.scss">:root {
+  --info-color: #ededed;
+  --danger-color: #dc3545;
+  --primary-color: #f067b0;
+  --primary-color-lighten: #f27ebc;
+  --white-color: #fff;
+  --dark-color: #333;
+  --dark-info-color: #999;
+  --border-radius: 8px;
+  --h-padding: 1rem;
+  --background-color: #ffffff;
+  --text-color: #333;
+  --notifications-item-height: 40px;
+  --notifications-gap: 8px;
+  --notifications-danger-bg: #fcf0f1;
+  --input-border-radius: var(--border-radius);
+  --input-border-width: 1px;
+  --input-border-color: var(--dark-info-color);
+  --input-height: 44px;
+  --input-disabled-bg: #fafafa;
+  --button-bg-color: var(--white-color);
+  --button-border-radius: var(--border-radius);
+  --button-border-color: var(--dark-info-color);
+  --button-text-color: var(--dark-color);
+  --button-height: 44px;
+  --menu-link-color: var(--dark-info-color);
+  --menu-link-color-hover: var(--dark-color);
+  --menu-link-color-active: var(--primary-color);
+}
+
+[data-theme=dark] {
+  --background-color: #3e587b;
+  --text-color: #ffffff;
+}
+
+@keyframes SpinAnimation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.spin {
+  animation: SpinAnimation infinite linear 0.6s;
+}
+
+.va-notifications {
+  position: fixed;
+  top: 1rem;
+  height: 0;
+  width: 100%;
+}
+.va-notifications__wrap {
+  display: flex;
+  margin: 0 auto;
+  width: fit-content;
+  gap: var(--notifications-gap);
+  flex-direction: column;
+  justify-content: center;
+  transition: height 0.3s;
+}
+.va-notifications__item {
+  transform: translateY(-300%);
+  opacity: 0;
+  transition: all 0.3s;
+  display: flex;
+  width: fit-content;
+  background-color: white;
+  padding: 0.25rem 2rem;
+  margin: 0 auto;
+  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  gap: 1rem;
+}
+.va-notifications__item.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+.va-notifications__item.is-danger {
+  color: var(--danger-color);
+  background-color: var(--notifications-danger-bg);
+}
+
+.nav-menu-group {
+  font-size: 14px;
+}
+.nav-menu-group__title {
+  font-weight: bold;
+}
+.nav-menu > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-menu > ul li a {
+  text-decoration: none;
+  color: var(--menu-link-color);
+}
+.nav-menu > ul li:hover {
+  --menu-link-color: var(--menu-link-color-hover);
+}
+.nav-menu > ul li.active {
+  --menu-link-color: var(--menu-link-color-active);
+}
+
+input {
+  border-radius: var(--input-border-radius);
+  border-width: var(--input-border-width);
+  display: inline-flex;
+  width: 100%;
+  padding: 0;
+  height: calc(var(--input-height) - 2px);
+}
+
+button {
+  display: inline-flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.va-button {
+  display: inline-flex;
+  cursor: pointer;
+  align-items: center;
+  border-radius: var(--button-border-radius);
+  background-color: var(--button-bg-color);
+  border-color: var(--button-border-color);
+  color: var(--button-text-color);
+  height: var(--input-height);
+  padding: 0 var(--h-padding);
+  gap: 0.5rem;
+}
+.va-button__primary {
+  --button-bg-color: var(--primary-color);
+  --button-border-color: var(--primary-color);
+  --button-text-color: var(--white-color);
+}
+.va-button__primary:hover {
+  --button-bg-color: var(--primary-color-lighten);
+}
+.va-button__danger {
+  --button-bg-color: var(--danger-color);
+  --button-border-color: var(--danger-color);
+  --button-text-color: var(--white-color);
+}
+.va-button__danger:hover {
+  --button-bg-color: var(--primary-color-lighten);
+}
+.va-button__danger.is-link {
+  --button-text-color: var(--danger-color);
+}
+.va-button:hover {
+  filter: brightness(102%);
+}
+.va-button.is-link {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  --button-border-radius: 0;
+  --button-bg-color: transparent;
+}
+.va-button.is-disabled {
+  opacity: 0.6;
+}
+
+.svg-icon {
+  display: inline-flex;
+}
+
+svg {
+  vertical-align: text-bottom;
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+}
+
+.va-form__item {
+  border: var(--input-border-width) solid var(--input-border-color);
+  border-radius: var(--input-border-radius);
+  padding: 0 var(--h-padding);
+  height: var(--input-height);
+  gap: 0.5rem;
+}
+.va-form__item input {
+  outline: none;
+  --input-border-radius: 0;
+  --input-border-width: 0;
+}
+.va-form__item-wrapper {
+  display: flex;
+  width: 100%;
+}
+.va-form__item-suffix, .va-form__item-prefix {
+  display: flex;
+  align-items: center;
+  color: var(--dark-info-color);
+}
+.va-form__item-suffix .va-button, .va-form__item-prefix .va-button {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 0 0.25rem;
+}
+.va-form__item-prefix {
+  margin-left: -0.25rem;
+}
+.va-form__item-suffix {
+  margin-right: -0.25rem;
+}
+.va-form__item.is-error {
+  --input-border-color: var(--danger-color);
+}
+.va-form__item.is-disabled {
+  background-color: var(--input-disabled-bg);
+  opacity: 0.6;
+}
+
+.va-field-control__error {
+  color: var(--danger-color);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}</style><style type="text/css" data-vite-dev-id="/Users/zslayer/Work/vue-vite-ts/node_modules/prismjs/themes/prism-tomorrow.css">/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #ccc;
+	background: none;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #2d2d2d;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #999;
+}
+
+.token.punctuation {
+	color: #ccc;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+	color: #e2777a;
+}
+
+.token.function-name {
+	color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+	color: #f08d49;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+	color: #f8c555;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+	color: #cc99cd;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+	color: #7ec699;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+	color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+.token.inserted {
+	color: green;
+}
+</style><style type="text/css" data-vite-dev-id="/Users/zslayer/Work/vue-vite-ts/src/components/Elements/CopyLink.vue?vue&amp;type=style&amp;index=0&amp;scoped=436e4372&amp;lang.scss">.copy-link[data-v-436e4372] {
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+.copy-link[data-v-436e4372]:disabled {
+  --dark-info-color: var(--info-color);
+}</style><style type="text/css" data-vite-dev-id="/Users/zslayer/Work/vue-vite-ts/src/components/Elements/CodeSnippet.vue?vue&amp;type=style&amp;index=0&amp;scoped=ef6806e6&amp;lang.scss"></style><style type="text/css" data-vite-dev-id="/Users/zslayer/Work/vue-vite-ts/src/components/Navigations/SidebarMenu.vue?vue&amp;type=style&amp;index=0&amp;scoped=3a310eec&amp;lang.scss">.sidebar-menu[data-v-3a310eec] {
+  flex-direction: column;
+  gap: 2rem;
+}</style><style type="text/css" data-vite-dev-id="/Users/zslayer/Work/vue-vite-ts/src/layout/SidebarLayout.vue?vue&amp;type=style&amp;index=0&amp;scoped=d743b34c&amp;lang.scss">.sidebar-layout[data-v-d743b34c] {
+  display: flex;
+  height: 100dvh;
+}
+.sidebar[data-v-d743b34c] {
+  display: flex;
+  width: 300px;
+  border-right: 1px solid var(--info-color);
+  overflow: auto;
+  height: 100dvh;
+  padding: 1rem;
+  flex-direction: column;
+}
+.main-container[data-v-d743b34c] {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+  width: 100%;
+}
+.main-container > header[data-v-d743b34c] {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--info-color);
+  gap: 1rem;
+}
+.main-container > main[data-v-d743b34c] {
+  height: 100%;
+  overflow: auto;
+  padding: 1rem;
+}
+.main-container > footer[data-v-d743b34c] {
+  padding: 0.5rem 1rem;
+  border-top: 1px solid var(--info-color);
+}</style></head>
+  <body>
+    <div id="app" data-v-app=""><div data-v-d743b34c="" class="sidebar-layout flex"><div data-v-d743b34c="" class="sidebar"><div data-v-d743b34c="" class="logo-block flex items-center mb-8"><button type="button" class="va-button va-button__primary is-link"><!--v-if--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos svg-icon vite-icon" width="40" height="40" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 257"><defs><lineargradient id="IconifyId1813088fe1fbc01fb466" x1="-.828%" x2="57.636%" y1="7.652%" y2="78.411%"><stop offset="0%" stop-color="#41D1FF"></stop><stop offset="100%" stop-color="#BD34FE"></stop></lineargradient><lineargradient id="IconifyId1813088fe1fbc01fb467" x1="43.376%" x2="50.316%" y1="2.242%" y2="89.03%"><stop offset="0%" stop-color="#FFEA83"></stop><stop offset="8.333%" stop-color="#FFDD35"></stop><stop offset="100%" stop-color="#FFA800"></stop></lineargradient></defs><path fill="url(#IconifyId1813088fe1fbc01fb466)" d="M255.153 37.938L134.897 252.976c-2.483 4.44-8.862 4.466-11.382.048L.875 37.958c-2.746-4.814 1.371-10.646 6.827-9.67l120.385 21.517a6.537 6.537 0 0 0 2.322-.004l117.867-21.483c5.438-.991 9.574 4.796 6.877 9.62Z"></path><path fill="url(#IconifyId1813088fe1fbc01fb467)" d="M185.432.063L96.44 17.501a3.268 3.268 0 0 0-2.634 3.014l-5.474 92.456a3.268 3.268 0 0 0 3.997 3.378l24.777-5.718c2.318-.535 4.413 1.507 3.936 3.838l-7.361 36.047c-.495 2.426 1.782 4.5 4.151 3.78l15.304-4.649c2.372-.72 4.652 1.36 4.15 3.788l-11.698 56.621c-.732 3.542 3.979 5.473 5.943 2.437l1.313-2.028l72.516-144.72c1.215-2.423-.88-5.186-3.54-4.672l-25.505 4.922c-2.396.462-4.435-1.77-3.759-4.114l16.646-57.705c.677-2.35-1.37-4.583-3.769-4.113Z"></path></svg></button></div><div data-v-3a310eec="" data-v-d743b34c="" class="sidebar-menu flex"><div data-v-3a310eec="" class="nav-menu-group"><div class="nav-menu-group__title mb-1">Getting Started</div><div data-v-3a310eec="" class="nav-menu"><ul><li class=""><a href="http://localhost:5173/guide/introduction" class="">Introduction</a></li><li class=""><a href="http://localhost:5173/guide/quick-start" class="">Quick Start</a></li><li class=""><a href="http://localhost:5173/guide/router" class="">Router</a></li><li class=""><a href="http://localhost:5173/guide/state" class="">State</a></li><li class=""><a href="http://localhost:5173/guide/api" class="">Api</a></li></ul></div></div><div data-v-3a310eec="" class="nav-menu-group"><div class="nav-menu-group__title mb-1">UI Setup</div><div data-v-3a310eec="" class="nav-menu"><ul><li class=""><a href="http://localhost:5173/" class="">Layouts</a></li><li class=""><a href="http://localhost:5173/" class="">Views</a></li><li class=""><a href="http://localhost:5173/" class="">Components</a></li><li class=""><a href="http://localhost:5173/" class="">Styles</a></li></ul></div></div><div data-v-3a310eec="" class="nav-menu-group"><div class="nav-menu-group__title mb-1">Elements Examples</div><div data-v-3a310eec="" class="nav-menu"><ul><li class=""><a href="http://localhost:5173/" class="">Form</a></li><li class=""><a href="http://localhost:5173/" class="">Table</a></li><li class=""><a href="http://localhost:5173/" class="">Notification</a></li><li class=""><a href="http://localhost:5173/" class="">Teleport</a></li></ul></div></div><div data-v-3a310eec="" class="nav-menu-group"><div class="nav-menu-group__title mb-1">Instruments</div><div data-v-3a310eec="" class="nav-menu"><ul><li class="active"><a aria-current="page" href="http://localhost:5173/guide/config-provider" class="router-link-active router-link-exact-active">Config Provider</a></li><li class=""><a href="http://localhost:5173/" class="">VueForm</a></li><li class=""><a href="http://localhost:5173/" class="">VueUse</a></li></ul></div></div></div></div><div data-v-d743b34c="" class="main-container"><header data-v-d743b34c="" class="flex items-center justify-end">system false <div class="va-switcher"><input type="checkbox"></div><button data-v-d743b34c="" type="button" class="va-button va-button__info"><!--v-if-->Logout</button></header><main data-v-d743b34c=""><div data-v-d743b34c="" class=""><h1>ConfigProvider</h1><div data-v-ef6806e6="" class="code-snippet mb-8"><div data-v-ef6806e6="" class="code-snippet__title">Example:</div><pre data-v-ef6806e6="" class="language-javascript" tabindex="0"><code data-v-ef6806e6="" class="language-javascript"><span class="token operator">&lt;</span>global<span class="token operator">-</span>provide<span class="token operator">-</span>config <span class="token operator">:</span>options<span class="token operator">=</span><span class="token string">"{ allFieldsClearable: false }"</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>component <span class="token operator">:</span>is<span class="token operator">=</span><span class="token string">"layout"</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>router<span class="token operator">-</span>view <span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>component<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>global<span class="token operator">-</span>provide<span class="token operator">-</span>config<span class="token operator">&gt;</span></code></pre><a data-v-436e4372="" data-v-ef6806e6="" href="http://localhost:5173/guide/config-provider#" class="copy-link"><svg data-v-436e4372="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="16" width="16" class="svg-icon copy-icon"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M384 336H192c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16l140.1 0L400 115.9V320c0 8.8-7.2 16-16 16zM192 384H384c35.3 0 64-28.7 64-64V115.9c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1H192c-35.3 0-64 28.7-64 64V320c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H256c35.3 0 64-28.7 64-64V416H272v32c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192c0-8.8 7.2-16 16-16H96V128H64z"></path></svg></a></div></div></main><footer data-v-d743b34c="">footer</footer></div></div><!--v-if--></div>
+    <script type="module" src="./Vue RND - Config Provider_files/main.ts"></script>
+  
+
+</body></html>

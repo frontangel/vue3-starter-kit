@@ -15,7 +15,7 @@ const props = defineProps<{
 
 const globalOptions = inject<any>('globalOptions', { allFieldsClearable: false })
 const formOptions = inject<any>('formOptions', { v$: null, loading: false })
-const { isError, reset: resetField, loading } = inject<any>('fieldSettings', { isError: false, prop: '', loading: false, reset: () => {} })
+const { isError, reset: resetField } = inject<any>('fieldSettings', { isError: false, prop: '', loading: false, reset: () => {} })
 
 const showPassword = ref(false)
 

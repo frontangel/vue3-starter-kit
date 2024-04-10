@@ -2,11 +2,12 @@
 import { computed, inject, provide } from 'vue'
 
 const props = withDefaults(defineProps<{
-  label: string
-  prop: string
+  label?: string
+  prop?: string
   errors?: any[]
 }>(), {
-  errors: () => []
+  errors: () => [],
+  prop: () => '',
 })
 
 const formOptions = inject<any>('formOptions', { v$: null, loading: false })

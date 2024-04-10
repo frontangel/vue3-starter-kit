@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { useAuthStore } from '~/store/auth.store.ts'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import LogoBlock from '~/components/Elements/LogoBlock.vue'
 import ThemeSwitcher from '~/components/Elements/ThemeSwitcher.vue'
 
 const authStore = useAuthStore()
 const router = useRouter()
+const route = useRoute()
 
 function logout() {
   authStore.logout()
@@ -24,6 +25,7 @@ function logout() {
         <va-button variant="info" @click="logout">Logout</va-button>
       </header>
       <main>
+        <h1 v-if="route.meta.title">{{ route.meta.title }}</h1>
         <router-view v-slot="{ Component }">
           <transition name="fade" mode="out-in">
             <component :is="Component" />

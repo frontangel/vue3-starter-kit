@@ -1,23 +1,22 @@
 <script lang="ts" setup>
+import { provide, shallowRef } from 'vue'
 
-import { computed, provide, reactive } from 'vue'
+export interface iConfig {
+  allFieldsClearable?: boolean
+}
 
-const props = defineProps<{
-  options: {
-    allFieldsClearable: boolean
-  }
-}>()
-
-const defaultOptions = reactive({
-  allFieldsClearable: false
+const props = withDefaults(defineProps<{
+  options?: iConfig
+}>(), {
+  options: () => ({
+    allFieldsClearable: false
+  })
 })
 
-const globalOptions = computed(() => ({
-...defaultOptions,
-...props.options
-}))
+const globalOptions = shallowRef(props.options)
 provide('globalOptions', globalOptions)
 </script>
+
 <template>
   <slot />
 </template>

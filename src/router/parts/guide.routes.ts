@@ -46,7 +46,15 @@ export const guideRoutes: any[] = [
         meta: {
           title: 'Api'
         }
-      }
+      },
+      {
+        path: 'config-provider',
+        name: 'ConfigProvider',
+        component: () => import('~/views/Guide/ConfigProviderView.vue'),
+        meta: {
+          title: 'Config Provider'
+        }
+      },
     ]
   }
 ]

@@ -26,16 +26,14 @@ const formsMenu: iMenu[] = [
   { text: 'Form', to: '/' },
   { text: 'Table', to: '/' },
   { text: 'Notification', to: '/' },
+  { text: 'Teleport', to: '/' },
 ]
 
 const instrumentsMenu: iMenu[] = [
+  { text: 'Config Provider', to: '/guide/config-provider' },
   { text: 'VueForm', to: '/' },
   { text: 'VueUse', to: '/' },
 ]
-
-onMounted(() => {
-  console.log(route)
-})
 </script>
 
 <template>

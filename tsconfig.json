@@ -23,12 +23,13 @@
     /* Custom */
     "baseUrl": ".",
     "paths": {
-      "~/*": ["src/*"],
+      "~/*": ["src/*"]
     },
     "types": [
       "vite-plugin-pwa/client",
       "vite/client"
-    ]
+    ],
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]

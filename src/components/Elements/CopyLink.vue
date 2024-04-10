@@ -9,8 +9,7 @@ defineProps<{
 
 <template>
   <a href="#" class="copy-link" @click="copy(source)">
-    <va-svg-icon v-if="copied" icon="check" />
-    <va-svg-icon v-else icon="copy" />
+    <va-svg-icon :icon="copied ? 'check' : 'copy'" />
   </a>
 </template>
 
