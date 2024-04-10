@@ -22,7 +22,4 @@ export const useAuthStore = defineStore('auth', {
       this.token = ''
     }
   },
-  debounce: {
-    signIn: 10000
-  }
 })

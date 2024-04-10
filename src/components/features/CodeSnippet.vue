@@ -4,7 +4,7 @@ import 'prismjs/themes/prism-tomorrow.css'
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-bash';
 import { onMounted, ref } from 'vue'
-import CopyLink from '~/components/common/Elements/CopyLink.vue'
+import CopyLink from '~/components/features/CopyLink.vue'
 
 withDefaults(defineProps<{
   code: string

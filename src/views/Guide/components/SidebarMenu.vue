@@ -4,7 +4,7 @@ import NavMenu from '~/components/common/Menu/nav-menu.vue'
 import { iMenu } from '~/interfaces/navigation.interface.ts'
 
 const startMenu: iMenu[] = [
-  { text: 'Introduction', to: '/guide/introduction' },
+  { text: 'Introduction', to: '/guide' },
   { text: 'Quick Start', to: '/guide/quick-start' },
   { text: 'Router', to: '/guide/router' },
   { text: 'State', to: '/guide/state' },

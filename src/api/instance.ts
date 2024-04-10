@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios'
-import useMock from '~/mock/adapter.mock.ts'
+import useMock from '~/api/mock/adapter.mock.ts'
 import { useEventBus } from '@vueuse/core'
 import { INotificationOptions } from '~/interfaces/notification.interface.ts'
 

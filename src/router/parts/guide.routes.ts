@@ -1,14 +1,15 @@
 export const guideRoutes: any[] = [
   {
     path: '/guide',
-    redirect: '/guide/introduction',
+    redirect: '/guide',
+    name: 'Guide',
     meta: {
       layout: 'Sidebar',
       requiresAuth: true
     },
     children: [
       {
-        path: 'introduction',
+        path: '',
         name: 'Introduction',
         component: () => import('~/views/Guide/IntroductionView.vue'),
         meta: {

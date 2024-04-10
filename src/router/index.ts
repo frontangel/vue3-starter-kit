@@ -9,7 +9,7 @@ const routes = [
   {
     path: '/',
     name: 'Main',
-    redirect: '/dashboard'
+    redirect: '/guide'
   },
   ...authRoutes,
   ...dashboardRoutes,

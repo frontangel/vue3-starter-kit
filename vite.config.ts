@@ -7,9 +7,7 @@ import svgLoader from 'vite-svg-loader'
 import Components from 'unplugin-vue-components/vite';
 import { VantResolver } from 'unplugin-vue-components/resolvers';
 
-
 const pathSrc = path.resolve(__dirname, 'src')
-
 export default defineConfig({
   resolve: {
     alias: {
@@ -23,7 +21,7 @@ export default defineConfig({
         VantResolver(),
       ],
       dirs: ['src/components'],
-      dts: 'src/components.d.ts',
+      dts: 'src/components/components.d.ts',
     }),
     svgLoader({
       defaultImport: 'component',

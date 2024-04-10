@@ -1,14 +1,14 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
 import LoginForm from '~/views/Auth/components/signin-form.vue'
 import { useAuthStore } from '~/store/auth.store.ts'
 import { iSignInForm } from '~/api/auth.api.ts'
-import { useRouter } from 'vue-router'
 
 const authStore = useAuthStore()
 const router = useRouter()
 
 function onSubmit(payload: iSignInForm) {
-  authStore.signIn(payload).then(() => router.push({ name: 'Dashboard' }))
+  authStore.signIn(payload).then(() => router.push({ name: 'Guide' }))
 }
 </script>
 
