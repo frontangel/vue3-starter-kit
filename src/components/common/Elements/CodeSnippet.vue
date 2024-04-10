@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import Prism from 'prismjs';
-import 'prismjs/themes/prism-tomorrow.css'; // або інша тема на ваш смак
+import 'prismjs/themes/prism-tomorrow.css'
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-bash';
 import { onMounted, ref } from 'vue'
-import CopyLink from '~/components/Elements/CopyLink.vue'
+import CopyLink from '~/components/common/Elements/CopyLink.vue'
 
 withDefaults(defineProps<{
   code: string

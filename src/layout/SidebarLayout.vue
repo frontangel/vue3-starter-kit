@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useAuthStore } from '~/store/auth.store.ts'
 import { useRoute, useRouter } from 'vue-router'
-import LogoBlock from '~/components/Elements/LogoBlock.vue'
-import ThemeSwitcher from '~/components/Elements/ThemeSwitcher.vue'
+import LogoBlock from '~/components/common/Elements/LogoBlock.vue'
+import ThemeSwitcher from '~/components/common/Elements/ThemeSwitcher.vue'
 
 const authStore = useAuthStore()
 const router = useRouter()

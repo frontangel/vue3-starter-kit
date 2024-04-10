@@ -3,7 +3,7 @@ import { reactive } from 'vue'
 import { useVuelidate } from '@vuelidate/core'
 import { required, email, helpers, minLength } from '@vuelidate/validators'
 import { iSignInForm } from '~/api/auth.api.ts'
-import VaButton from '~/components/Buttons/VaButton.vue'
+import VaButton from '~/components/common/Buttons/va-button.vue'
 
 defineProps<{
   loading?: boolean

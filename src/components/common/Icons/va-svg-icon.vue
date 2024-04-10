@@ -15,8 +15,8 @@ const props = withDefaults(defineProps<{
 const dynamicComponent = shallowRef()
 function updateComponent(icon: string) {
   dynamicComponent.value = defineAsyncComponent(() =>
-    import(`../../assets/icons/${icon}.svg`)
-      .catch(() => import('../../assets/icons/bug.svg'))
+    import(`../../../assets/icons/${icon}.svg`)
+      .catch(() => import('../../../assets/icons/bug.svg'))
   )
 }
 
@@ -37,7 +37,7 @@ onMounted(() => {})
       :is="dynamicComponent"
       :height="iconSize.height"
       :width="iconSize.width"
-      :class="['svg-icon', `${icon}-icon`]"
+      :class="[`${icon}-icon`]"
     />
   </span>
 </template>

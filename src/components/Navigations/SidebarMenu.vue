@@ -1,11 +1,7 @@
 <script lang="ts" setup>
-import { onMounted } from 'vue'
-import { useRoute } from 'vue-router'
-import NavMenuGroup from '~/components/Navigations/nav-menu-group.vue'
-import NavMenu from '~/components/Navigations/nav-menu.vue'
+import NavMenuGroup from '~/components/common/Menu/nav-menu-group.vue'
+import NavMenu from '~/components/common/Menu/nav-menu.vue'
 import { iMenu } from '~/interfaces/navigation.interface.ts'
-
-const route = useRoute()
 
 const startMenu: iMenu[] = [
   { text: 'Introduction', to: '/guide/introduction' },

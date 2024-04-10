@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import VaSwitcher from '~/components/Inputs/va-switcher.vue'
+import VaSwitcher from '~/components/common/Inputs/va-switcher.vue'
 import { useThemeStore } from '~/store/theme.store.ts'
 import { ref } from 'vue'
 const themeStore = useThemeStore()

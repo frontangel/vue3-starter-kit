@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import { computed, onBeforeUnmount, ref } from 'vue'
-import GlobalProvideConfig from '~/components/Provide/global-provide-config.vue'
-import VaNotify from '~/components/Notifications/VaNotify.vue'
+import GlobalProvideConfig from '~/components/common/Config/global-provide-config.vue'
+import VaNotify from '~/components/common/Notifications/va-notify.vue'
 import { useEventBus } from '@vueuse/core'
 import { INotificationOptions } from '~/interfaces/notification.interface.ts'
 import { useConfigStore } from '~/store/config.store.ts'
@@ -28,9 +28,7 @@ function notificationsListener(event: string, payload: any) {
 const layout = computed(() => {
   return `${route?.meta?.layout || `Default`}Layout`
 })
-onBeforeUnmount(() => {
-  unsubscribe()
-})
+onBeforeUnmount(unsubscribe)
 </script>
 
 <template>

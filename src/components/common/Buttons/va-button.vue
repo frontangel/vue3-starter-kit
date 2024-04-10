@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import VaSvgIcon from '~/components/Icons/va-svg-icon.vue'
+import VaSvgIcon from '~/components/common/Icons/va-svg-icon.vue'
 
 enum ButtonVariantEnum {
   PRIMARY = 'primary',

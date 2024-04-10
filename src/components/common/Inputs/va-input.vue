@@ -1,8 +1,9 @@
 <script lang="ts" setup>
-import VaSvgIcon from '~/components/Icons/va-svg-icon.vue'
+import VaSvgIcon from '~/components/common/Icons/va-svg-icon.vue'
 import { computed, inject, ref } from 'vue'
 
 const model = defineModel<string>()
+
 const props = defineProps<{
   prefix?: string
   placeholder?: string
