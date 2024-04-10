@@ -3,7 +3,7 @@ import dashboardRoutes from '~/router/parts/dashboard.routes.ts'
 import authRoutes from '~/router/parts/auth.routes.ts'
 import { authGuard } from '~/router/middleware/auth.middleware.ts'
 import { seoMiddleware } from '~/router/middleware/seo.middleware.ts'
-import introductionRoutes from '~/router/parts/introduction.routes.ts'
+import guideRoutes from '~/router/parts/guide.routes.ts'
 
 const routes = [
   {
@@ -13,7 +13,7 @@ const routes = [
   },
   ...authRoutes,
   ...dashboardRoutes,
-  ...introductionRoutes,
+  ...guideRoutes,
   {
     path: '/:catchAll(.*)',
     name: 'NotFound',

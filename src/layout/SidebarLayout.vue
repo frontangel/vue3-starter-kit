@@ -15,7 +15,7 @@ function logout() {
 <template>
   <div class="sidebar-layout flex">
     <div class="sidebar">
-      <logo-block class="mb-4" />
+      <logo-block class="mb-8" />
       <sidebar-menu />
     </div>
     <div class="main-container">
