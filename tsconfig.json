@@ -29,6 +29,7 @@
       "vite-plugin-pwa/client",
       "vite/client"
     ],
+    "typeRoots": ["./node_modules/@types", "./types", "./node_modules"],
     "allowSyntheticDefaultImports": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],

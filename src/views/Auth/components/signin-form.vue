@@ -16,7 +16,7 @@ const emits = defineEmits(['submit'])
 
 const form = reactive<iSignInForm>({
   email: 'va@devurai.com',
-  password: 'qwerty123VI'
+  password: 'qwerty123VIP'
 })
 
 const rules = {

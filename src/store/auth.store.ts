@@ -1,25 +1,32 @@
 import { defineStore } from 'pinia'
+import { ref, shallowRef } from 'vue'
+import { useLocalStorage } from '@vueuse/core'
 import AuthApi, { iSignInForm } from '~/api/auth.api.ts'
 
-export const useAuthStore = defineStore('auth', {
-  state: () => ({
-    token: localStorage.getItem('token') || '',
-    loading: false
-  }),
-  actions: {
-    async signIn(payload: iSignInForm) {
-      this.loading = true
-      try {
-        const { token } = (await AuthApi.signIn(payload)).data
-        localStorage.setItem('token', token)
-        this.token = token
-      } finally {
-        this.loading = false
-      }
-    },
-    logout() {
-      localStorage.removeItem('token')
-      this.token = ''
+export const useAuthStore = defineStore('auth', () => {
+  const accessToken = shallowRef(useLocalStorage('accessToken', ''))
+  const refreshToken = shallowRef(useLocalStorage('refreshToken', ''))
+  const loading = ref(false)
+
+  const signIn = async (payload: iSignInForm) => {
+    loading.value = true
+    try {
+      const response = await AuthApi.signIn(payload)
+      accessToken.value = response.accessToken
+      refreshToken.value = response.refreshToken
+    } finally {
+      loading.value = false
     }
-  },
+  }
+  const logout = () => {
+    accessToken.value = ''
+    refreshToken.value = ''
+  }
+
+  return {
+    accessToken,
+    loading,
+    signIn,
+    logout
+  }
 })

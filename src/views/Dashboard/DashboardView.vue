@@ -3,9 +3,7 @@
 <template>
   <div class="">
     Dashboard
-    <code-snippet>
-      console.log('hello world');
-    </code-snippet>
+    <code-snippet code="console.log('hello world');" />
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur dolore eaque enim illo mollitia nihil velit
       voluptas, voluptatem. Dolore dolorem doloremque ea non pariatur sequi similique sit ut? Omnis, reprehenderit.</p>
     <p>Animi beatae cum cupiditate dignissimos distinctio dolore earum eligendi eos esse fuga fugiat ipsa laborum

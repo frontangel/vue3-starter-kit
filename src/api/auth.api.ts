@@ -1,8 +1,8 @@
 import apiInstance from './instance.ts'
 
 const ResidentsApi = {
-  signIn(data: iSignInForm) {
-    return apiInstance.post('/sign-in', data)
+  signIn(data: iSignInForm): Promise<{ accessToken: string; refreshToken: string }> {
+    return apiInstance.post('/auth/login', data)
   }
 }
 

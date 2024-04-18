@@ -27,6 +27,9 @@
   --input-border-color: var(--dark-info-color);
   --input-height: #{map-get(config.$controls-size, 'height')};
   --input-disabled-bg: #{lighten(map-get(config.$colors, 'info'), 5%)};
+  --input-checkbox-height: calc(#{map-get(config.$controls-size, 'height')} / 2);
+  --input-checkbox-background: var(--info-color);
+  --input-checkbox-button-color: var(--dark-info-color);
 
   // buttons
   --button-bg-color: var(--white-color);
