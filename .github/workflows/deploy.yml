@@ -21,9 +21,6 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          NODE_ENV: 'production'
-          BASE_URL: '/vue-vite-ts'
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
