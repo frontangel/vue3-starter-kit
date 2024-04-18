@@ -61,5 +61,5 @@ export default defineConfig({
     }),
     Unocss(),
   ],
-  base: process.env.NODE_ENV === 'production' ? '/vue-vite-ts/' : '/'
+  base: process.env.BASE_URL
 })

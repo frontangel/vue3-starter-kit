@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vue-tsc && vite build",
+    "build:git": "vue-tsc && vite build --mode production",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -33,8 +34,10 @@
     "@unocss/preset-attributify": "^0.58.5",
     "@unocss/preset-uno": "^0.58.5",
     "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/cli-service": "^5.0.8",
     "add": "^2.0.6",
     "axios-mock-adapter": "^1.22.0",
+    "dotenv": "^16.4.5",
     "sass": "^1.72.0",
     "typescript": "^5.2.2",
     "unocss": "^0.58.5",
