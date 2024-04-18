@@ -19,7 +19,6 @@ import pinia from '~/store'
 import router from '~/router'
 
 const app = createApp(App)
-
 registerLayouts(app)
 
 app.use(pinia)
