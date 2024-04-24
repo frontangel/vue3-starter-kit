@@ -15,7 +15,6 @@
 
 <style lang="scss" scoped>
 .content {
-  background-color: white;
   padding: 1rem;
   display: flex;
   flex-direction: column;

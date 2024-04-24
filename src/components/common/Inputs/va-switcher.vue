@@ -23,7 +23,6 @@ const model = defineModel<boolean>()
     position: relative;
     height: var(--input-checkbox-height);
     width: 3rem;
-
     &:before {
       content: '';
       position: absolute;
@@ -41,6 +40,7 @@ const model = defineModel<boolean>()
       height: 0;
       width: 0;
       z-index: 0;
+      visibility: hidden;
       &:checked {
         + .va-switcher__button {
           left: calc(100% - var(--input-checkbox-height));
