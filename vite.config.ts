@@ -6,6 +6,8 @@ import Unocss from 'unocss/vite'
 import svgLoader from 'vite-svg-loader'
 import Components from 'unplugin-vue-components/vite';
 import { VantResolver } from 'unplugin-vue-components/resolvers';
+import dotenv from 'dotenv'
+dotenv.config()
 
 const pathSrc = path.resolve(__dirname, 'src')
 export default defineConfig({
@@ -30,6 +32,22 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['vite.svg'],
+      manifest: {
+        name: "Vue Vite Typescript",
+        short_name: "App",
+        start_url: "." + process.env.VITE_BASE_PATH,
+        display: "standalone",
+        background_color: "#ffffff",
+        description: "A description of your app.",
+        icons: [
+          {
+            src: "vite.svg",
+            sizes: "512x512",
+            type: "image/svg+xml",
+            purpose: "any maskable"
+          }
+        ]
+      },
       workbox: {
         skipWaiting: true,
         clientsClaim: true,
@@ -61,5 +79,6 @@ export default defineConfig({
     }),
     Unocss(),
   ],
-  base: process.env.BASE_URL
+  base: process.env.VITE_BASE_PATH
 })
+
