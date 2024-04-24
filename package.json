@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vue-tsc && vite build",
-    "build:git": "vue-tsc && vite build --mode production",
+    "build:production": "NODE_ENV=production vue-tsc --noEmit && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
