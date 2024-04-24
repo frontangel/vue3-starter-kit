@@ -8,7 +8,7 @@ import Components from 'unplugin-vue-components/vite'
 import { VantResolver } from 'unplugin-vue-components/resolvers'
 
 import dotenv from 'dotenv'
-dotenv.config({ path: process.env.NODE_ENV === 'production' ? '.env.production' : '.env' })
+dotenv.config()
 
 
 const pathSrc = path.resolve(__dirname, 'src')
