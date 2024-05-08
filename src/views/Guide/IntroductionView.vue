@@ -2,7 +2,7 @@
 import { iFileList } from '~/interfaces/content.iterface.ts'
 
 const fileList: iFileList[] = [
-  { name: 'api', desc: '', sub: [{ name: 'mock', desc: '' }] },
+  { name: 'api', desc: '', sub: [{ name: 'mock', desc: 'desc' }] },
   { name: 'assets', desc: '', sub: [
     { name: 'fonts', desc: '' },
     { name: 'icons', desc: '' },
