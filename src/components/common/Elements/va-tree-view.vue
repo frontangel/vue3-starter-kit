@@ -10,7 +10,7 @@ defineProps<{
 <template>
   <ul :class="{ 'file-list': !isSub }">
     <li v-for="(item, index) of tree" :key="index">
-      <span :class="[`file-list__${item.isFile ? 'file' : 'folder'}`]">{{ item.name }}</span> - {{ item.desc }}
+      <div class="file-list__row"><span :class="[`file-list__${item.isFile ? 'file' : 'folder'}`]">{{ item.name }}</span> - {{ item.desc }}</div>
       <va-tree-view v-if="item.sub?.length" :tree="item.sub" is-sub />
     </li>
   </ul>

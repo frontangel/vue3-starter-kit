@@ -2,6 +2,7 @@
 
 :root {
   // global
+  --dark-color: #{map-get(config.$colors, 'dark')};
   --info-color: #{map-get(config.$colors, 'info')};
   --light-info-color: #{map-get(config.$colors, 'light-info')};
   --danger-color:  #{map-get(config.$colors, 'danger')};
@@ -9,7 +10,6 @@
 
   --primary-color-lighten:  #{lighten(map-get(config.$colors, 'primary'), 5%)};
   --white-color: #fff;
-  --dark-color: #333;
   --dark-info-color: #999;
 
   --border-radius: 8px;
