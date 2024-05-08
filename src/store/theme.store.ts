@@ -1,27 +1,28 @@
 import { defineStore } from 'pinia'
+import { shallowRef } from 'vue'
+import { useLocalStorage } from '@vueuse/core'
+import { useWindow } from '~/utils/window.utils.ts'
 
-export const useThemeStore = defineStore('theme', {
-  state: () => ({
-    theme: localStorage.getItem('theme') || 'system', // Variants: 'light', 'dark', 'system'
-  }),
-  actions: {
-    toggleTheme() {
-      this.theme = this.theme === 'light' ? 'dark' : 'light'
-      localStorage.setItem('theme', this.theme)
-      this.applyTheme();
-    },
-    setSystemTheme() {
-      this.theme = 'system'
-      localStorage.setItem('theme', 'system')
-      this.applyTheme()
-    },
-    applyTheme() {
-      if (this.theme === 'system') {
-        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', systemTheme)
-      } else {
-        document.documentElement.setAttribute('data-theme', this.theme)
-      }
-    }
+export const useThemeStore = defineStore('theme', () => {
+  const theme:any = shallowRef(useLocalStorage('theme', 'system'))
+
+  const { getColorScheme } = useWindow()
+  const applyTheme = () => useWindow().applyTheme(theme.value)
+
+  const toggleTheme = () => {
+    theme.value = getColorScheme() === 'light' ? 'dark' : 'light'
+    applyTheme()
+  }
+
+  const setSystemTheme = () => {
+    theme.value = 'system'
+    applyTheme()
+  }
+
+  return {
+    theme,
+    toggleTheme,
+    setSystemTheme,
+    applyTheme
   }
 })

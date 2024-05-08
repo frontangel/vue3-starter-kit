@@ -1,22 +1,45 @@
-import { defineConfig } from 'unocss'
-import presetUno from '@unocss/preset-uno'
-import presetAttributify from '@unocss/preset-attributify'
+// uno.config.ts
+import {
+  defineConfig,
+  presetAttributify,
+  presetIcons,
+  presetTypography,
+  presetUno,
+  presetWebFonts,
+  transformerDirectives,
+  transformerVariantGroup
+} from 'unocss'
 
 export default defineConfig({
-  presets: [
-    presetUno(),
-    presetAttributify()
-  ],
+  shortcuts: [],
   theme: {
+    colors: {
+      primary: 'blue'
+    },
     breakpoints: {
-      xs: '375px',
-      sm: '768px',
-      md: '1024px',
-      lg: '1440px',
-      xlg: '2560px'
+      xs: '320px',
+      sm: '640px',
+      md: '960px'
+    },
+    fontFamily: {
+      sans: ['Roboto', 'sans-serif']
     }
   },
-  rules: [
-    // ['m-1', { margin: '5rem' }]
+  presets: [
+    presetUno(),
+    presetAttributify(),
+    presetIcons(),
+    presetTypography(),
+    presetWebFonts({
+      provider: 'google',
+      fonts: {
+        sans: 'Roboto',
+        mono: ['Fira Code', 'Fira Mono:400,700'],
+      }
+    })
+  ],
+  transformers: [
+    transformerDirectives(),
+    transformerVariantGroup()
   ]
 })

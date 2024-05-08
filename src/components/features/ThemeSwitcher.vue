@@ -1,18 +1,35 @@
 <script setup lang="ts">
 import VaSwitcher from '~/components/common/Inputs/va-switcher.vue'
 import { useThemeStore } from '~/store/theme.store.ts'
-import { ref } from 'vue'
+import { computed, shallowRef } from 'vue'
 const themeStore = useThemeStore()
 
-const isDark = ref(false)
+const isSystemDark = shallowRef(window.matchMedia('(prefers-color-scheme: dark)').matches)
+const modelValue = computed(() => themeStore.theme === 'system' ? isSystemDark.value : themeStore.theme === 'dark')
+const icon = computed(() => {
+  return !modelValue.value
+    ? "line-md:moon-to-sunny-outline-loop-transition"
+    : "line-md:sunny-outline-to-moon-loop-transition";
+})
 
-function handleChange (value: boolean) {
-  themeStore.theme = value ? 'dark' : 'light'
-  themeStore.applyTheme()
+const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+colorSchemeQuery.addEventListener('change', (e) => isSystemDark.value = e.matches);
+
+function toggleTheme(value: boolean) {
+  value === isSystemDark.value
+    ? themeStore.setSystemTheme()
+    : themeStore.toggleTheme()
 }
 </script>
 
 <template>
-  {{ themeStore.theme }} {{ isDark }}
-  <va-switcher v-model="isDark" @update:model-value="handleChange" />
+  <va-switcher
+    :model-value="modelValue"
+    :icon="icon"
+    inactive-btn-bg="white"
+    inactive-btn-color="black"
+    active-btn-bg="black"
+    active-btn-color="white"
+    @update:model-value="toggleTheme"
+  />
 </template>

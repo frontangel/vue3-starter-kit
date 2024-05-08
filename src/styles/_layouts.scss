@@ -1,0 +1,46 @@
+.sidebar-layout {
+  display: flex;
+  height: 100dvh;
+  max-width: 1680px;
+  margin: 0 auto;
+  &:before {
+    content: '';
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    background: var(--sidebar-background-color);
+    z-index: -1;
+    left: 0;
+  }
+}
+.sidebar {
+  display: flex;
+  min-width: 300px;
+  width: 300px;
+  background: var(--sidebar-background-color);
+  overflow: auto;
+  height: 100dvh;
+  padding: 1rem;
+  flex-direction: column;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+  width: 100%;
+  background: var(--background-color);
+  > header {
+    padding: 1rem 1rem;
+    gap: 1rem;
+    height: 80px;
+  }
+  > main {
+    height: 100%;
+    overflow: auto;
+    padding: 1rem;
+  }
+  > footer {
+    padding: 0.5rem 1rem;
+  }
+}

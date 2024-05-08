@@ -3,18 +3,19 @@
 :root {
   // global
   --info-color: #{map-get(config.$colors, 'info')};
+  --light-info-color: #{map-get(config.$colors, 'light-info')};
   --danger-color:  #{map-get(config.$colors, 'danger')};
   --primary-color:  #{map-get(config.$colors, 'primary')};
 
   --primary-color-lighten:  #{lighten(map-get(config.$colors, 'primary'), 5%)};
   --white-color: #fff;
   --dark-color: #333;
-
   --dark-info-color: #999;
 
   --border-radius: 8px;
   --h-padding: 1rem;
   --background-color: #ffffff;
+  --sidebar-background-color: var(--light-info-color);
   --text-color: #333;
 
   --notifications-item-height: 40px;
@@ -42,6 +43,9 @@
   --menu-link-color: var(--dark-info-color);
   --menu-link-color-hover: var(--dark-color);
   --menu-link-color-active: var(--primary-color);
+
+  // hr
+  --hr-color: #eaeaea;
 }
 
 

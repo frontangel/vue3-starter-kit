@@ -1,5 +1,6 @@
 @use "root";
 @use "dark";
+@use "layouts";
 @use "animations";
 @use "notifications";
 @use "navigations";
@@ -7,6 +8,7 @@
 @use "buttons";
 @use "icons";
 @use "forms";
+@use "elements";
 
 * {
   box-sizing: border-box;
@@ -15,4 +17,13 @@
 body {
   background-color: var(--background-color);
   color: var(--text-color);
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  background-color: var(--hr-color);
+  flex: 0 0 1;
 }

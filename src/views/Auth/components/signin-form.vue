@@ -15,8 +15,8 @@ defineExpose({
 const emits = defineEmits(['submit'])
 
 const form = reactive<iSignInForm>({
-  email: 'va@devurai.com',
-  password: 'qwerty123VIP'
+  email: 'demo@mail.com',
+  password: 'veryStrongPassword'
 })
 
 const rules = {

@@ -1,14 +1,30 @@
 <script lang="ts" setup>
+import { computed } from 'vue'
+
 const model = defineModel<boolean>()
+const props = defineProps<{
+  prefix?: string
+  suffix?: string
+  icon?: string
+  inactiveBtnBg?: string
+  inactiveBtnColor?: string
+  activeBtnBg?: string
+  activeBtnColor?: string
+}>()
+
+const styles = computed(() => ({
+  backgroundColor: model.value ? props.activeBtnBg : props.inactiveBtnBg,
+  color: model.value ? props.activeBtnColor : props.inactiveBtnColor,
+}))
 </script>
 <template>
   <div class="va-switcher" @click="model = !model">
-    <div class="va-switcher__prefix">prefix</div>
+    <div v-if="prefix" class="va-switcher__prefix">{{ prefix }}</div>
     <div class="va-switcher__control">
       <input v-model="model" type="checkbox" />
-      <div class="va-switcher__button" />
+      <div class="va-switcher__button" :style="styles"><va-animated-icon v-if="icon" :icon="icon" /></div>
     </div>
-    <div class="va-switcher__suffix">suffix</div>
+    <div v-if="suffix" class="va-switcher__suffix">{{ suffix }}</div>
   </div>
 </template>
 
@@ -27,13 +43,14 @@ const model = defineModel<boolean>()
       content: '';
       position: absolute;
       z-index: 1;
-      height: 1rem;
-      width: 100%;
-      left: 0;
+      height: calc(100% + 2px);
+      width: calc(100% + 2px);
+      left: 50%;
       top: 50%;
       background-color: var(--input-checkbox-background);
       border-radius: 50px;
-      transform: translateY(-50%);
+      border: 1px solid var(--input-border-color);
+      transform: translate(-50%, -50%);
     }
     input {
       position: absolute;
@@ -43,7 +60,7 @@ const model = defineModel<boolean>()
       visibility: hidden;
       &:checked {
         + .va-switcher__button {
-          left: calc(100% - var(--input-checkbox-height));
+          left: calc(100% - var(--input-checkbox-height) - 1px);
         }
       }
     }
@@ -55,9 +72,15 @@ const model = defineModel<boolean>()
     background-color: var(--input-checkbox-button-color);
     border-radius: 50px;
     position: absolute;
-    left: 0;
+    left: 1px;
     top: 0;
     transition: all .2s ease-in-out;
+    > * {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 }
 </style>
