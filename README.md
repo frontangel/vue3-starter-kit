@@ -31,6 +31,24 @@ I want to introduce you to a starter kit that helps me in developing Front-End. 
 - **utils** - Auxiliary functions that can be used in different parts of the app.
 - **views** - Pages or large sections of the app.
 
+### How to use
+
+Clone the Vue3 Starter Kit from GitHub using the following command:
+
+```bash
+git clone git@github.com:frontangel/vue3-starter-kit.git
+```
+
+#### Configuring UnoCSS
+Edit the `uno.config.ts` file to configure UnoCSS according to your project needs.
+
+#### Configuring SCSS
+
+Modify the following SCSS files to tailor the styles:
+
+- `styles/_root.scss` - Use this file to set global styles, such as CSS variables.
+- `styles/_config.scss` - This file is for setting up SCSS variables, mixins, and functions that are used across your project.
+
 ### Libraries:
 - [**VueUse**](https://vueuse.org/) - Collection of Vue Composition Utilities.
 - [**Vuelidate**](https://vuelidate-next.netlify.app/) - Vuelidate is considered model-based because the validation rules are defined next to your data, and the validation tree structure matches the data model structure.
