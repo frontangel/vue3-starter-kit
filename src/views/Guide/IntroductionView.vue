@@ -50,7 +50,7 @@ const librariesList = [
     <h3>Бібліотеки:</h3>
     <ul class="no-list">
       <li v-for="(item, index) of librariesList" :key="index" class="mb-2">
-        <a :href="item.url" rel="nofollow">{{ item.label }}</a> - {{ item.desc }}
+        <a :href="item.url" rel="nofollow" target="_blank">{{ item.label }}</a> - {{ item.desc }}
       </li>
     </ul>
   </div>

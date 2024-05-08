@@ -27,7 +27,7 @@ export const guideRoutes: any[] = [
       {
         path: 'router',
         name: 'Router',
-        component: () => import('~/views/Guide/QuickStartView.vue'),
+        component: () => import('~/views/Guide/RouterView.vue'),
         meta: {
           title: 'Router'
         }
