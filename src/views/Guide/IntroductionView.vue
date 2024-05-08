@@ -2,25 +2,27 @@
 import { iFileList } from '~/interfaces/content.iterface.ts'
 
 const fileList: iFileList[] = [
-  { name: 'api', desc: 'управління всіма запитами до зовнішніх або внутрішніх API', sub: [{ name: 'mock', desc: 'використовується для зберігання мокових (замінних) даних і функцій, які імітують відповіді від зовнішніх AP' }] },
-  { name: 'assets', desc: 'для зберігання статичних ресурсів додатка', sub: [
-    { name: 'fonts', desc: 'шрифти' },
-    { name: 'icons', desc: 'іконки' },
-    { name: 'img', desc: 'зображення' },
+  { name: 'api', desc: 'manages all requests to external or internal APIs', sub: [
+    { name: 'mock', desc: 'used for storing mock data and functions that simulate responses from external APIs' }
     ] },
-  { name: 'components', desc: 'основне місце для зберігання Vue компонентів', sub: [
-      {name: 'common', desc: 'універсальні компоненти, які можуть бути використані в багатьох місцях додатку'},
-      {name: 'feature', desc: 'компоненти, які є специфічними для певних функціональних частин або "фіч" додатку'},
+  { name: 'assets', desc: 'for storing static resources of the app', sub: [
+    { name: 'fonts', desc: 'fonts' },
+    { name: 'icons', desc: 'icons' },
+    { name: 'img', desc: 'images' },
+    ] },
+  { name: 'components', desc: 'the main place for storing Vue components', sub: [
+      {name: 'common', desc: 'universal components that can be used in many parts of the app'},
+      {name: 'feature', desc: 'components specific to certain functional parts or "features" of the app'},
     ]},
-  { name: 'layouts', desc: 'використовується для зберігання компонентів макетів, які визначають структуру основних розкладок сторінок у додатку' },
-  { name: 'router', desc: 'для зберігання конфігурацій та скриптів, пов\'язаних з маршрутизацією', sub: [
-      { name: 'middleware', desc: 'функції, які виконуються перед входом в маршрут або під час зміни маршрутів' },
-      { name: 'parts', desc: 'зберігання частин маршрутизаційних конфігурацій' }
+  { name: 'layouts', desc: 'used for storing layout components that define the structure of the main page layouts in the app' },
+  { name: 'router', desc: 'for storing configurations and scripts related to routing', sub: [
+      { name: 'middleware', desc: 'functions that are executed before entering a route or during route changes' },
+      { name: 'parts', desc: 'for storing configurations and scripts related to routing' }
     ] },
-  { name: 'store', desc: 'для зберігання усієї логіки та стану додатку' },
-  { name: 'styles', desc: 'зберігання стилів, які визначають зовнішній вигляд додатка' },
-  { name: 'utils', desc: 'допоміжні функції, які можуть бути використані в різних частинах додатку' },
-  { name: 'views', desc: 'сторінки або великі секції додатку' },
+  { name: 'store', desc: 'for storing all the logic and state of the app' },
+  { name: 'styles', desc: 'storing styles that define the appearance of the app' },
+  { name: 'utils', desc: 'auxiliary functions that can be used in different parts of the app' },
+  { name: 'views', desc: 'pages or large sections of the app' },
 ]
 
 const librariesList = [
@@ -35,19 +37,17 @@ const librariesList = [
 
 <template>
   <div class="">
-    <h2>Вітаю друже!</h2>
+    <h2>Hello friend!</h2>
     <p class="mb-8">
-      Хочу представити starter kit який допомогає мені розробці Front-End.
-      Тут є все необхідне для швидкого початку розробки майже будь-якого проєкту на Vue.
-      Ти зможеш знайти детальний опис архітектури проєкту з прикладами і посиланнями на джерела.
+      I want to introduce you to a starter kit that helps me in developing Front-End. It contains everything necessary for a quick start on almost any project on Vue. You will be able to find a detailed description of the project architecture with examples and references.
     </p>
 
-    <h3>Архітектура:</h3>
+    <h3>Architecture:</h3>
     <p class="mb-8">
       <va-tree-view :tree="fileList" />
     </p>
 
-    <h3>Бібліотеки:</h3>
+    <h3>Libraries:</h3>
     <ul class="no-list">
       <li v-for="(item, index) of librariesList" :key="index" class="mb-2">
         <a :href="item.url" rel="nofollow" target="_blank">{{ item.label }}</a> - {{ item.desc }}

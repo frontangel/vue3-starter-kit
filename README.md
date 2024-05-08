@@ -7,7 +7,38 @@
 
 # Vue 3 Starter Kit
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite.
+### Hello friend!
+I want to introduce you to a starter kit that helps me in developing Front-End. It contains everything necessary for a quick start on almost any project on Vue. You will be able to find a detailed description of the project architecture with examples and references.
 
-[View Demo](https://vue3-starter-kit.frontangel.dev/)
+
+### Architecture:
+
+- **api** - Manages all requests to external or internal APIs.
+  - **mock** - Used for storing mock data and functions that simulate responses from external APIs.
+- **assets** - For storing static resources of the app.
+    - **fonts** - Fonts.
+    - **icons** - Icons.
+    - **img** - Images.
+- **components** - The main place for storing Vue components.
+    - **common** - Universal components that can be used in many parts of the app.
+    - **feature** - Components specific to certain functional parts or "features" of the app.
+- **layouts** - Used for storing layout components that define the structure of the main page layouts in the app.
+- **router** - For storing configurations and scripts related to routing.
+    - **middleware** - Functions that are executed before entering a route or during route changes.
+    - **parts** - For storing configurations and scripts related to routing.
+- **store** - For storing all the logic and state of the app.
+- **styles** - Storing styles that define the appearance of the app.
+- **utils** - Auxiliary functions that can be used in different parts of the app.
+- **views** - Pages or large sections of the app.
+
+### Libraries:
+- [**VueUse**](https://vueuse.org/) - Collection of Vue Composition Utilities.
+- [**Vuelidate**](https://vuelidate-next.netlify.app/) - Vuelidate is considered model-based because the validation rules are defined next to your data, and the validation tree structure matches the data model structure.
+- [**Faker**](https://fakerjs.dev/) - Generate massive amounts of fake (but realistic) data for testing and development.
+- [**Iconify**](https://iconify.design/) - All popular icon sets, one framework.
+- [**Pinia**](https://pinia.vuejs.org/) - The intuitive store for Vue.js.
+- [**axios-mock-adapter**](https://github.com/ctimmerm/axios-mock-adapter#readme) - Axios adapter that allows to easily mock requests.
+
+
+### [Demo](https://vue3-starter-kit.frontangel.dev/)
 
