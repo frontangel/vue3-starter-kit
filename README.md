@@ -10,6 +10,7 @@
 ### Hello friend!
 I want to introduce you to a starter kit that helps me in developing Front-End. It contains everything necessary for a quick start on almost any project on Vue. You will be able to find a detailed description of the project architecture with examples and references.
 
+<br>
 
 ### Architecture:
 
@@ -31,6 +32,8 @@ I want to introduce you to a starter kit that helps me in developing Front-End. 
 - **utils** - Auxiliary functions that can be used in different parts of the app.
 - **views** - Pages or large sections of the app.
 
+<br>
+
 ### How to use
 
 Clone the Vue3 Starter Kit from GitHub using the following command:
@@ -39,8 +42,12 @@ Clone the Vue3 Starter Kit from GitHub using the following command:
 git clone git@github.com:frontangel/vue3-starter-kit.git
 ```
 
+<br>
+
 #### Configuring UnoCSS
 Edit the `uno.config.ts` file to configure UnoCSS according to your project needs.
+
+<br>
 
 #### Configuring SCSS
 
@@ -48,6 +55,8 @@ Modify the following SCSS files to tailor the styles:
 
 - `styles/_root.scss` - Use this file to set global styles, such as CSS variables.
 - `styles/_config.scss` - This file is for setting up SCSS variables, mixins, and functions that are used across your project.
+
+<br>
 
 ### Libraries:
 - [**VueUse**](https://vueuse.org/) - Collection of Vue Composition Utilities.
