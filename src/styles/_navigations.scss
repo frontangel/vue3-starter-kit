@@ -15,7 +15,10 @@
         text-decoration: none;
         color: var(--menu-link-color);
       }
-      &:hover {
+      &.disabled {
+        opacity: 0.4;
+      }
+      &:hover:not(.disabled) {
         --menu-link-color: var(--menu-link-color-hover);
       }
       &.active {

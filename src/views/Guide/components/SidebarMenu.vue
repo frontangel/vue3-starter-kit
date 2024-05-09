@@ -6,29 +6,29 @@ import { iMenu } from '~/interfaces/navigation.interface.ts'
 const startMenu: iMenu[] = [
   { text: 'Introduction', to: '/guide' },
   { text: 'Quick Start', to: '/guide/quick-start' },
-  { text: 'Router', to: '/guide/router' },
-  { text: 'State', to: '/guide/state' },
-  { text: 'Api', to: '/guide/api' }
+  { text: 'Router', to: '/guide/router', disabled: true },
+  { text: 'State', to: '/guide/state', disabled: true },
+  { text: 'Api', to: '/guide/api', disabled: true }
 ]
 
 const uiMenu: iMenu[] = [
-  { text: 'Layouts', to: '/guide/layouts' },
-  { text: 'Views', to: '/guide/views' },
-  { text: 'Components', to: '/guide/components' },
-  { text: 'Styles', to: '/guide/styles' },
+  { text: 'Layouts', to: '/guide/layouts', disabled: true },
+  { text: 'Views', to: '/guide/views', disabled: true },
+  { text: 'Components', to: '/guide/components', disabled: true },
+  { text: 'Styles', to: '/guide/styles', disabled: true },
 ]
 
 const examplesMenu: iMenu[] = [
-  { text: 'Login Form', to: '/guide/login-example'},
-  { text: 'Table', to: '/guide/table-example' },
-  { text: 'Notification', to: '/guide/table-example' },
-  { text: 'Teleport', to: '/guide/teleport-example' },
-  { text: 'Config Provider', to: '/guide/config-provider' },
+  { text: 'Login Form', to: '/guide/login-example' },
+  { text: 'Table', to: '/guide/table-example', disabled: true },
+  { text: 'Notification', to: '/guide/table-example', disabled: true },
+  { text: 'Teleport', to: '/guide/teleport-example', disabled: true },
+  { text: 'Config Provider', to: '/guide/config-provider', disabled: true },
 ]
 
 const instrumentsMenu: iMenu[] = [
-  { text: 'VueForm', to: '/' },
-  { text: 'VueUse', to: '/' },
+  { text: 'VueForm', to: '/', disabled: true },
+  { text: 'VueUse', to: '/', disabled: true },
 ]
 </script>
 
