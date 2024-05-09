@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 .env*
 !.github/workflows
+
+yarn.lock
