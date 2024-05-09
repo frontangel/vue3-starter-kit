@@ -1,15 +1,10 @@
 <script lang="ts" setup>
 import { useRoute } from 'vue-router'
-
-interface iNavMenu {
-  text: string
-  to: string
-  disabled?: boolean
-}
+import {iMenu} from "~/interfaces/navigation.interface.ts";
 
 const route = useRoute()
 withDefaults(defineProps<{
-  menu: iNavMenu[]
+  menu: iMenu[]
 }>(), {
   menu: () => []
 })
@@ -20,8 +15,8 @@ withDefaults(defineProps<{
   <div class="nav-menu">
     <ul>
       <li v-for="(item, index) of menu" :key="index" :class="{ active: route.path === item.to, disabled: item.disabled }">
-        <router-link v-if="!item.disabled" :to="item.to">{{ item.text }}</router-link>
-        <a href="#" @click.prevent>{{ item.text }}</a>
+        <a v-if="item.disabled" href="#" @click.prevent>{{ item.text }}</a>
+        <router-link v-else :to="item.to">{{ item.text }}</router-link>
       </li>
     </ul>
   </div>
