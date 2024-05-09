@@ -4,7 +4,7 @@ export function SignIn(config: any) {
   let code = 200
   const { email, password } = JSON.parse(config.data)
 
-  if (email !== 'va@devurai.com' || password !== 'qwerty123VIP') {
+  if (email !== 'mail@domain.com' || password !== 'qwerty123') {
     return [401, { message: 'Login or password is incorrect!' }]
   }
 

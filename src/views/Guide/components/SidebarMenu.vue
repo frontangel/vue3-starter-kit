@@ -12,21 +12,21 @@ const startMenu: iMenu[] = [
 ]
 
 const uiMenu: iMenu[] = [
-  { text: 'Layouts', to: '/' },
-  { text: 'Views', to: '/' },
-  { text: 'Components', to: '/' },
-  { text: 'Styles', to: '/' },
+  { text: 'Layouts', to: '/guide/layouts' },
+  { text: 'Views', to: '/guide/views' },
+  { text: 'Components', to: '/guide/components' },
+  { text: 'Styles', to: '/guide/styles' },
 ]
 
-const formsMenu: iMenu[] = [
-  { text: 'Form', to: '/' },
-  { text: 'Table', to: '/' },
-  { text: 'Notification', to: '/' },
-  { text: 'Teleport', to: '/' },
+const examplesMenu: iMenu[] = [
+  { text: 'Login Form', to: '/guide/login-example'},
+  { text: 'Table', to: '/guide/table-example' },
+  { text: 'Notification', to: '/guide/table-example' },
+  { text: 'Teleport', to: '/guide/teleport-example' },
+  { text: 'Config Provider', to: '/guide/config-provider' },
 ]
 
 const instrumentsMenu: iMenu[] = [
-  { text: 'Config Provider', to: '/guide/config-provider' },
   { text: 'VueForm', to: '/' },
   { text: 'VueUse', to: '/' },
 ]
@@ -42,8 +42,8 @@ const instrumentsMenu: iMenu[] = [
       <nav-menu :menu="uiMenu" />
     </nav-menu-group>
 
-    <nav-menu-group title="Elements Examples">
-      <nav-menu :menu="formsMenu" />
+    <nav-menu-group title="Examples">
+      <nav-menu :menu="examplesMenu" />
     </nav-menu-group>
 
     <nav-menu-group title="Instruments">

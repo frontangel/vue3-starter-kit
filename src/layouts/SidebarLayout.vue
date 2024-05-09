@@ -18,7 +18,7 @@ const route = useRoute()
         <theme-switcher />
       </header>
       <hr class="ml-4 mr-4">
-      <main>
+      <main class="!md-px-8">
         <h1 v-if="route.meta.title" class="mt-0">{{ route.meta.title }}</h1>
         <router-view v-slot="{ Component }">
           <transition name="fade" mode="out-in">

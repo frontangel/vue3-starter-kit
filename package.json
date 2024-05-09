@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@formkit/auto-animate": "^0.8.2",
     "@pinia/plugin-debounce": "^1.0.1",
     "@popperjs/core": "^2.11.8",
     "@unocss/reset": "^0.58.5",
@@ -20,6 +21,7 @@
     "@vueuse/core": "^10.9.0",
     "@vueuse/integrations": "^10.9.0",
     "axios": "^1.6.8",
+    "axios-auth-refresh": "^3.3.6",
     "lodash": "^4.17.21",
     "pinia": "^2.1.7",
     "prismjs": "^1.29.0",

@@ -49,6 +49,14 @@ export const guideRoutes: any[] = [
         }
       },
       {
+        path: 'login-example',
+        name: 'LoginExample',
+        component: () => import('~/views/Guide/LoginExampleView.vue'),
+        meta: {
+          title: 'Login Page Example'
+        }
+      },
+      {
         path: 'config-provider',
         name: 'ConfigProvider',
         component: () => import('~/views/Guide/ConfigProviderView.vue'),
