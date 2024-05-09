@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
 import App from './App.vue'
 
 // Theme
@@ -23,6 +24,7 @@ registerLayouts(app)
 
 app.use(pinia)
 app.use(router)
+app.use(autoAnimatePlugin)
 app.mount('#app')
 
 const themeStore = useThemeStore()

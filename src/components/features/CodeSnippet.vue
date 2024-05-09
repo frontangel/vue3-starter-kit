@@ -22,7 +22,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="code-snippet mb-8">
+  <div class="code-snippet">
     <div class="code-snippet__title">Example: <b v-if="text">{{ text }}</b></div>
     <pre><code :class="`language-${language}`" ref="codeRef"><template v-if="!$slots.default">{{ code }}</template><slot /></code></pre>
     <copy-link :source="code" />

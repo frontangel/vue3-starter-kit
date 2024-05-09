@@ -1,9 +1,11 @@
 <script lang="ts" setup>
-import { reactive } from 'vue'
 import { useVuelidate } from '@vuelidate/core'
 import { required, email, helpers, minLength } from '@vuelidate/validators'
 import { iSignInForm } from '~/api/auth.api.ts'
 import VaButton from '~/components/common/Buttons/va-button.vue'
+import {shallowReactive} from "vue";
+
+const form = defineModel<iSignInForm>({ default: shallowReactive({ email: '', password: '' })})
 
 defineProps<{
   loading?: boolean
@@ -13,11 +15,6 @@ defineExpose({
   clear: clearForm
 })
 const emits = defineEmits(['submit'])
-
-const form = reactive<iSignInForm>({
-  email: 'demo@mail.com',
-  password: 'veryStrongPassword'
-})
 
 const rules = {
   email: {
@@ -35,11 +32,11 @@ const v$ = useVuelidate(rules, form)
 async function onSubmit() {
   const valid = await v$.value.$validate()
   if (!valid) return
-  emits('submit', form)
+  emits('submit', form.value)
 }
 
 function clearForm () {
-  Object.assign(form, { email: '', password: '' })
+  Object.assign(form.value, { email: '', password: '' })
   v$.value.$reset()
 }
 </script>
@@ -48,12 +45,12 @@ function clearForm () {
   <va-form :loading="loading" :rules="v$" @submit="onSubmit">
     <!-- provide variant -->
     <va-input-wrapper label="Email:" prop="email">
-      <va-input v-model="form.email" reset-on-input placeholder="Enter email" />
+      <va-input v-model="form.email" reset-on-input placeholder="mail@domain.com" />
     </va-input-wrapper>
 
     <!-- prop variant -->
     <va-input-wrapper label="Password:" prop="password" :errors="v$.password.$errors">
-      <va-input v-model="form.password" password placeholder="Enter password" />
+      <va-input v-model="form.password" password placeholder="qwerty123" />
     </va-input-wrapper>
 
     <div class="text-right">

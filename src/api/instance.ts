@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from 'axios'
-import useMock from '~/api/mock/adapter.mock.ts'
 import { useEventBus, useLocalStorage } from '@vueuse/core'
+
+import useMock from '~/api/mock/adapter.mock.ts'
 import { INotificationOptions } from '~/interfaces/notification.interface.ts'
 import { shallowRef } from 'vue'
 
@@ -37,6 +38,7 @@ apiInstance.interceptors.response.use(
   async (error) => {
 
     const originalRequest = error.config
+    console.log(error)
 
     if (error.response && error.response.status === 401 && !originalRequest._retry) {
       if (!isRefreshed.value) {
@@ -52,8 +54,6 @@ apiInstance.interceptors.response.use(
           isRefreshed.value = false;
           refreshToken.value = ''
           accessToken.value = ''
-          window.location.reload()
-          return Promise.reject(error.response.data as any)
         }
       }
     }
