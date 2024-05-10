@@ -3,7 +3,7 @@ import LoginForm from '~/views/Auth/components/signin-form.vue'
 import { useAuthStore } from '~/store/auth.store.ts'
 import { iSignInForm } from '~/api/auth.api.ts'
 import VaEmpty from '~/components/common/Placeholders/va-empty.vue'
-import {ref, shallowReactive} from "vue";
+import {shallowReactive} from "vue";
 import {
   loginFormScriptSnippet,
   loginFormTemplateSnippet,
@@ -14,7 +14,6 @@ import {
 } from "~/lib/login.snippets.ts";
 
 const authStore = useAuthStore()
-const tab = ref(0)
 
 const form = shallowReactive<iSignInForm>({
   email: 'mail@domain.com',
