@@ -6,9 +6,28 @@ export function useWindow() {
     setDataTheme(payload)
   }
 
+  const observeTeleport = (elementId: string, externalCallback: Function) => {
+    const targetNode = document.getElementById(elementId);
+    if (!targetNode) return
+
+    const config = { childList: true };
+
+    const callback = function(mutationsList: any[]) {
+      for(let mutation of mutationsList) {
+        if (mutation.type === 'childList') {
+          externalCallback(!!mutation.addedNodes.length)
+        }
+      }
+    };
+    const observer = new MutationObserver(callback);
+    observer.observe(targetNode, config);
+    return observer
+  }
+
   return {
     getColorScheme,
     setDataTheme,
-    applyTheme
+    applyTheme,
+    observeTeleport
   }
 }

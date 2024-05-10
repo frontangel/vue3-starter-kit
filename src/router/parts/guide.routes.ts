@@ -57,6 +57,14 @@ export const guideRoutes: any[] = [
         }
       },
       {
+        path: 'teleport-example',
+        name: 'TeleportExample',
+        component: () => import('~/views/Guide/TeleportView.vue'),
+        meta: {
+          title: 'Teleport Example'
+        }
+      },
+      {
         path: 'config-provider',
         name: 'ConfigProvider',
         component: () => import('~/views/Guide/ConfigProviderView.vue'),

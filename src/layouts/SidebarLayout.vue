@@ -3,8 +3,32 @@ import { useRoute } from 'vue-router'
 import LogoBlock from '~/components/features/LogoBlock.vue'
 import ThemeSwitcher from '~/components/features/ThemeSwitcher.vue'
 import SidebarMenu from '~/views/Guide/components/SidebarMenu.vue'
+import {nextTick, onBeforeUnmount, onMounted, shallowRef} from "vue";
+import {useConfigStore} from "~/store/config.store.ts";
+import {useWindow} from "~/utils/window.utils.ts";
 
 const route = useRoute()
+const configStore = useConfigStore()
+const { observeTeleport } = useWindow()
+
+const observer = shallowRef()
+const footerIsNotEmpty = shallowRef(true)
+function onFooterTeleported(value: boolean) {
+  footerIsNotEmpty.value = value
+}
+
+onMounted(() => {
+  nextTick(() => {
+    configStore.isRendered.footer = !!document.getElementById('footer')
+    if (configStore.isRendered.footer && !observer.value) {
+      observer.value = observeTeleport('footer', onFooterTeleported)
+    }
+  })
+})
+
+onBeforeUnmount(() => {
+  observer.value?.disconnect();
+})
 </script>
 <template>
   <div class="sidebar-layout flex">
@@ -26,8 +50,8 @@ const route = useRoute()
           </transition>
         </router-view>
       </main>
-      <hr class="ml-4 mr-4">
-      <footer>footer</footer>
+      <hr v-if="configStore.isRendered && footerIsNotEmpty" class="ml-4 mr-4">
+      <footer id="footer" v-show="footerIsNotEmpty" />
     </div>
   </div>
 </template>

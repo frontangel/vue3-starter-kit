@@ -39,7 +39,7 @@ function onLogout() {
       <login-form v-model="form" :loading="authStore.loading" @submit="onSubmit" />
     </div>
 
-    <va-tabs v-model="tab">
+    <va-tabs>
       <va-tab label="Login View">
         <code-snippet language="JavaScript" text="script" :code="loginViewScriptSnippet" />
         <code-snippet text="template" :code="loginViewTemplateSnippet" />

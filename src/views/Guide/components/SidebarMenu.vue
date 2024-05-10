@@ -22,7 +22,7 @@ const examplesMenu: iMenu[] = [
   { text: 'Login Form', to: '/guide/login-example' },
   { text: 'Table', to: '/guide/table-example', disabled: true },
   { text: 'Notification', to: '/guide/table-example', disabled: true },
-  { text: 'Teleport', to: '/guide/teleport-example', disabled: true },
+  { text: 'Teleport', to: '/guide/teleport-example' },
   { text: 'Config Provider', to: '/guide/config-provider', disabled: true },
 ]
 
