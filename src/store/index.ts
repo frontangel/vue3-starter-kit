@@ -1,6 +1,8 @@
 import { createPinia } from 'pinia'
-import debounce from 'lodash/debounce'
 import { PiniaDebounce } from '@pinia/plugin-debounce'
+
+// @ts-ignore
+import { debounce } from 'ts-debounce'
 
 const pinia = createPinia()
 pinia.use(PiniaDebounce(debounce))

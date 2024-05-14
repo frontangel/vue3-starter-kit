@@ -22,9 +22,9 @@
     "@vueuse/integrations": "^10.9.0",
     "axios": "^1.6.8",
     "axios-auth-refresh": "^3.3.6",
-    "lodash": "^4.17.21",
     "pinia": "^2.1.7",
     "prismjs": "^1.29.0",
+    "ts-debounce": "^4.0.0",
     "vue": "^3.4.21",
     "vue-router": "4"
   },
@@ -35,7 +35,6 @@
     "@iconify-json/mdi": "^1.1.66",
     "@iconify/vue": "^4.1.2",
     "@types/axios-mock-adapter": "^1.10.0",
-    "@types/lodash": "^4.17.0",
     "@types/prismjs": "^1.26.3",
     "@unocss/preset-attributify": "^0.58.5",
     "@unocss/preset-uno": "^0.58.5",

@@ -32,11 +32,11 @@ export const guideRoutes: any[] = [
         }
       },
       {
-        path: 'state',
-        name: 'State',
-        component: () => import('~/views/Guide/QuickStartView.vue'),
+        path: 'store',
+        name: 'Store',
+        component: () => import('~/views/Guide/StateView.vue'),
         meta: {
-          title: 'State'
+          title: 'Store'
         }
       },
       {

@@ -1,5 +1,6 @@
 <script lang="ts" setup>
   import { indexRouterSnippet, rooterMiddlewareSnippet, routerPartSnippet } from '~/lib/router.snippets.ts';
+  import RouterFolderScreen from '~/assets/img/router-folder-screen.png';
 </script>
 
 <template>
@@ -10,6 +11,8 @@
       <li><b>middleware</b> - a directory used to store middleware functions that perform validation or modification of requests before they reach the final handlers</li>
       <li><b>index.ts</b> - the main file that typically assembles all the parts and middleware into a single router</li>
     </ul>
+
+    <img :src="RouterFolderScreen" alt="ApiFolderScreen" width="230" class="mb-8" />
 
     <va-tabs>
       <va-tab label="router">

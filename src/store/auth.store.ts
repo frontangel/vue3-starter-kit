@@ -1,12 +1,12 @@
 import { defineStore } from 'pinia'
-import { computed, ref, shallowRef } from 'vue'
+import { computed, ref } from 'vue'
 import { useLocalStorage } from '@vueuse/core'
 import AuthApi from '~/api/auth.api.ts'
 import { iSignInForm } from '~/interfaces/auth.interfaces.ts';
 
 export const useAuthStore = defineStore('auth', () => {
-  const accessToken = shallowRef(useLocalStorage('accessToken', ''))
-  const refreshToken = shallowRef(useLocalStorage('refreshToken', ''))
+  const accessToken = useLocalStorage('accessToken', '')
+  const refreshToken = useLocalStorage('refreshToken', '')
   const loading = ref(false)
 
   const isAuth = computed(() => Boolean(accessToken.value))

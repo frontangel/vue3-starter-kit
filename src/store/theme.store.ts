@@ -1,10 +1,9 @@
 import { defineStore } from 'pinia'
-import { shallowRef } from 'vue'
 import { useLocalStorage } from '@vueuse/core'
 import { useWindow } from '~/utils/window.utils.ts'
 
 export const useThemeStore = defineStore('theme', () => {
-  const theme:any = shallowRef(useLocalStorage('theme', 'system'))
+  const theme:any = useLocalStorage('theme', 'system')
 
   const { getColorScheme } = useWindow()
   const applyTheme = () => useWindow().applyTheme(theme.value)

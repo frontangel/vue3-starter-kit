@@ -6,8 +6,8 @@ import { INotificationOptions } from '~/interfaces/notification.interface.ts'
 import { shallowRef } from 'vue'
 
 const notificationsBus = useEventBus<string>('notification')
-const refreshToken = shallowRef(useLocalStorage('refreshToken', ''))
-const accessToken = shallowRef(useLocalStorage('accessToken', ''))
+const refreshToken = useLocalStorage('refreshToken', '')
+const accessToken = useLocalStorage('accessToken', '')
 const isRefreshed = shallowRef(false)
 
 const apiInstance = axios.create({

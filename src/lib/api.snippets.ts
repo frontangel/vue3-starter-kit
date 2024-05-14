@@ -42,8 +42,8 @@ import useMock from '~/api/mock/adapter.mock.ts'
 import { INotificationOptions } from '~/interfaces/notification.interface.ts'
 
 const notificationsBus = useEventBus('notification')
-const refreshToken = shallowRef(useLocalStorage('refreshToken', ''))
-const accessToken = shallowRef(useLocalStorage('accessToken', ''))
+const refreshToken = useLocalStorage('refreshToken', '')
+const accessToken = useLocalStorage('accessToken', '')
 const isRefreshed = shallowRef(false)
 
 const apiInstance = axios.create({

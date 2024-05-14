@@ -3,12 +3,12 @@ import {iMenu} from "~/interfaces/navigation.interface.ts";
 export const startMenu: iMenu[] = [
   { text: 'Introduction', to: '/guide' },
   { text: 'Quick Start', to: '/guide/quick-start' },
-  { text: 'Api', to: '/guide/api' },
-  { text: 'Router', to: '/guide/router' },
-  { text: 'State', to: '/guide/state', disabled: true }
 ]
 
-export const uiMenu: iMenu[] = [
+export const architectureMenu: iMenu[] = [
+  { text: 'Api', to: '/guide/api' },
+  { text: 'Router', to: '/guide/router' },
+  { text: 'Store', to: '/guide/store' },
   { text: 'Layouts', to: '/guide/layouts', disabled: true },
   { text: 'Views', to: '/guide/views', disabled: true },
   { text: 'Components', to: '/guide/components', disabled: true },
@@ -31,7 +31,7 @@ export const instrumentsMenu: iMenu[] = [
 
 export const navMenu = [
   { title: 'Getting Started', menu: startMenu },
-  { title: 'UI Setup', menu: uiMenu },
+  { title: 'Basic Architecture', menu: architectureMenu },
   { title: 'Examples', menu: examplesMenu },
   { title: 'Instruments', menu: instrumentsMenu },
 ]

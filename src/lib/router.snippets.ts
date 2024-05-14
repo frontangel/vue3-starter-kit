@@ -49,7 +49,7 @@ export default authRoutes
 `
 export const indexRouterSnippet = `import { createRouter, createWebHistory } from 'vue-router'
 import authRoutes from '~/router/parts/auth.routes.ts'
-// import { authGuard } from '~/router/middleware/auth.middleware.ts'
+import { authGuard } from '~/router/middleware/auth.middleware.ts'
 import { seoMiddleware } from '~/router/middleware/seo.middleware.ts'
 import guideRoutes from '~/router/parts/guide.routes.ts'
 
@@ -77,7 +77,7 @@ const router = createRouter({
 })
 
 // middlewares
-// router.beforeEach(authGuard)
+router.beforeEach(authGuard)
 router.afterEach(seoMiddleware)
 
 export default router

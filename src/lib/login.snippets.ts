@@ -79,7 +79,7 @@ import AuthApi, { iSignInForm } from '~/api/auth.api.ts'
 
 export const useAuthStore = defineStore('auth', () => {
   // state
-  const accessToken = shallowRef(useLocalStorage('accessToken', ''))
+  const accessToken = useLocalStorage('accessToken', '')
   const loading = ref(false)
   
   //  getters
@@ -119,8 +119,8 @@ import { INotificationOptions } from '~/interfaces/notification.interface.ts'
 import { shallowRef } from 'vue'
 
 const notificationsBus = useEventBus('notification')
-const refreshToken = shallowRef(useLocalStorage('refreshToken', ''))
-const accessToken = shallowRef(useLocalStorage('accessToken', ''))
+const refreshToken = useLocalStorage('refreshToken', '')
+const accessToken = useLocalStorage('accessToken', '')
 const isRefreshed = shallowRef(false)
 
 const apiInstance = axios.create({
