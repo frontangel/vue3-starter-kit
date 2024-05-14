@@ -4,7 +4,7 @@ export const startMenu: iMenu[] = [
   { text: 'Introduction', to: '/guide' },
   { text: 'Quick Start', to: '/guide/quick-start' },
   { text: 'Api', to: '/guide/api' },
-  { text: 'Router', to: '/guide/router', disabled: true },
+  { text: 'Router', to: '/guide/router' },
   { text: 'State', to: '/guide/state', disabled: true }
 ]
 
@@ -17,6 +17,7 @@ export const uiMenu: iMenu[] = [
 
 export const examplesMenu: iMenu[] = [
   { text: 'Login Form', to: '/guide/login-example' },
+  { text: 'Not for guest', to: '/guide/access-example' },
   { text: 'Table', to: '/guide/table-example', disabled: true },
   { text: 'Notification', to: '/guide/table-example', disabled: true },
   { text: 'Teleport', to: '/guide/teleport-example' },

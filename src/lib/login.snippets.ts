@@ -1,7 +1,7 @@
 export const loginViewScriptSnippet = `// script setup
 import LoginForm from '~/views/Auth/components/signin-form.vue'
 import { useAuthStore } from '~/store/auth.store.ts'
-import { iSignInForm } from '~/api/auth.api.ts'
+import { iSignInForm } from '~/interfaces/auth.interfaces.ts'
 import VaEmpty from '~/components/common/Placeholders/va-empty.vue'
 
 const authStore = useAuthStore()
@@ -16,7 +16,7 @@ export const loginFormScriptSnippet = `// script setup
 import { reactive } from 'vue'
 import { useVuelidate } from '@vuelidate/core'
 import { required, email, helpers, minLength } from '@vuelidate/validators'
-import { iSignInForm } from '~/api/auth.api.ts'
+import { iSignInForm } from '~/interfaces/auth.interfaces.ts'
 import VaButton from '~/components/common/Buttons/va-button.vue'
 
 // Form model

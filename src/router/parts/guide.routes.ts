@@ -5,7 +5,6 @@ export const guideRoutes: any[] = [
     name: 'Guide',
     meta: {
       layout: 'Sidebar',
-      requiresAuth: true
     },
     children: [
       {
@@ -13,7 +12,7 @@ export const guideRoutes: any[] = [
         name: 'Introduction',
         component: () => import('~/views/Guide/IntroductionView.vue'),
         meta: {
-          title: 'Introduction'
+          title: 'Introduction',
         }
       },
       {
@@ -55,6 +54,15 @@ export const guideRoutes: any[] = [
         meta: {
           title: 'Login Page Example'
         }
+      },
+      {
+        path: '/guide/access-example',
+        name: 'AccessExample',
+        component: () => import('~/views/Guide/AccessExampleView.vue'),
+        meta: {
+          title: 'Access Page Example',
+          requiresAuth: true
+        },
       },
       {
         path: 'teleport-example',
