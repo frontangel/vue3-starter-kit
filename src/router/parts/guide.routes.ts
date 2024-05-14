@@ -48,6 +48,14 @@ export const guideRoutes: any[] = [
         }
       },
       {
+        path: 'layouts',
+        name: 'Layouts',
+        component: () => import('~/views/Guide/LayoutsView.vue'),
+        meta: {
+          title: 'Layouts'
+        }
+      },
+      {
         path: 'login-example',
         name: 'LoginExample',
         component: () => import('~/views/Guide/LoginExampleView.vue'),

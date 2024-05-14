@@ -14,9 +14,9 @@ withDefaults(defineProps<{
 <template>
   <div class="nav-menu">
     <ul>
-      <li v-for="(item, index) of menu" :key="index" :class="{ active: route.path === item.to, disabled: item.disabled }">
+      <li v-for="(item, index) of menu" :key="index" :class="{ active: route.name === item.name, disabled: item.disabled }">
         <a v-if="item.disabled" href="#" @click.prevent>{{ item.text }}</a>
-        <router-link v-else :to="item.to">{{ item.text }}</router-link>
+        <router-link v-else :to="{ name: item.name }">{{ item.text }}</router-link>
       </li>
     </ul>
   </div>

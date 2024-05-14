@@ -2,6 +2,7 @@
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { navMenu } from '~/lib/navigation.menu.ts';
+import { iMenu } from '~/interfaces/navigation.interface.ts';
 
 const route = useRoute()
 
@@ -13,22 +14,22 @@ const navList = computed(() => {
       return m
     }))
   }
-  return list as { to: string, category: string, text: string }[]
+  return list as iMenu[]
 })
 
-const current = computed(() => navList.value.findIndex(item => item.to === route.path))
+const current = computed(() => navList.value.findIndex(item => item.name === route.name))
 const prev = computed(() => current.value > 0 ? navList.value[current.value - 1] : null)
 const next = computed(() => current.value < navList.value.length ? navList.value[current.value + 1] : null)
 </script>
 <template>
   <div class="prev-next-buttons flex justify-between mt-8">
-    <router-link v-if="prev" :to="prev.to" class="prev-button">
+    <router-link v-if="prev" :to="{ name: prev.name }" class="prev-button">
       <div class="cat">{{ prev.category }}</div>
-      <div><va-svg-icon icon="arrow-left" /> {{ prev.text }}</div>
+      <div><va-svg-icon icon="arrow-left" size="14" /> {{ prev.text }}</div>
     </router-link>
-    <router-link v-if="next" :to="next.to" class="next-button">
+    <router-link v-if="next" :to="{ name: next.name}" class="next-button">
       <div class="cat">{{ next.category }}</div>
-      <div>{{ next.text }} <va-svg-icon icon="arrow-right" /></div>
+      <div>{{ next.text }} <va-svg-icon icon="arrow-right" size="14" /></div>
     </router-link>
   </div>
 </template>
@@ -52,6 +53,7 @@ const next = computed(() => current.value < navList.value.length ? navList.value
       display: flex;
       gap: 0.5rem;
       align-items: center;
+      line-height: 1rem;
       &.cat {
         letter-spacing: 0;
         font-size: 12px;

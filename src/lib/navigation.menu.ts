@@ -1,32 +1,32 @@
-import {iMenu} from "~/interfaces/navigation.interface.ts";
+import { iMenu } from '~/interfaces/navigation.interface.ts';
 
 export const startMenu: iMenu[] = [
-  { text: 'Introduction', to: '/guide' },
-  { text: 'Quick Start', to: '/guide/quick-start' },
+  { text: 'Introduction', name: 'Introduction' },
+  { text: 'Quick Start', name: 'QuickStart' },
 ]
 
 export const architectureMenu: iMenu[] = [
-  { text: 'Api', to: '/guide/api' },
-  { text: 'Router', to: '/guide/router' },
-  { text: 'Store', to: '/guide/store' },
-  { text: 'Layouts', to: '/guide/layouts', disabled: true },
-  { text: 'Views', to: '/guide/views', disabled: true },
-  { text: 'Components', to: '/guide/components', disabled: true },
-  { text: 'Styles', to: '/guide/styles', disabled: true },
+  { text: 'Api', name: 'Guide' },
+  { text: 'Router', name: 'Api' },
+  { text: 'Store', name: 'Store' },
+  { text: 'Layouts', name: 'Layouts' },
+  { text: 'Views', disabled: true, name: '' },
+  { text: 'Components', disabled: true, name: '' },
+  { text: 'Styles', disabled: true, name: '' },
 ]
 
 export const examplesMenu: iMenu[] = [
-  { text: 'Login Form', to: '/guide/login-example' },
-  { text: 'Not for guest', to: '/guide/access-example' },
-  { text: 'Table', to: '/guide/table-example', disabled: true },
-  { text: 'Notification', to: '/guide/table-example', disabled: true },
-  { text: 'Teleport', to: '/guide/teleport-example' },
-  { text: 'Config Provider', to: '/guide/config-provider', disabled: true },
+  { text: 'Login Form', name: 'LoginExample' },
+  { text: 'Not for guest', name: 'AccessExample' },
+  { text: 'Table', disabled: true, name: '' },
+  { text: 'Notification', disabled: true, name: '' },
+  { text: 'Teleport', name: 'TeleportExample' },
+  { text: 'Config Provider', disabled: true, name: '' },
 ]
 
 export const instrumentsMenu: iMenu[] = [
-  { text: 'VueForm', to: '/', disabled: true },
-  { text: 'VueUse', to: '/', disabled: true },
+  { text: 'VueForm', to: '/', disabled: true, name: '' },
+  { text: 'VueUse', to: '/', disabled: true, name: '' },
 ]
 
 export const navMenu = [
