@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import dashboardRoutes from '~/router/parts/dashboard.routes.ts'
 import authRoutes from '~/router/parts/auth.routes.ts'
 // import { authGuard } from '~/router/middleware/auth.middleware.ts'
 import { seoMiddleware } from '~/router/middleware/seo.middleware.ts'
@@ -12,7 +11,6 @@ const routes = [
     redirect: '/guide'
   },
   ...authRoutes,
-  ...dashboardRoutes,
   ...guideRoutes,
   {
     path: '/:catchAll(.*)',

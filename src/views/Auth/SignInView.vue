@@ -2,7 +2,7 @@
 import { useRouter } from 'vue-router'
 import LoginForm from '~/views/Auth/components/signin-form.vue'
 import { useAuthStore } from '~/store/auth.store.ts'
-import { iSignInForm } from '~/api/auth.api.ts'
+import { iSignInForm } from '~/interfaces/auth.interfaces.ts';
 
 const authStore = useAuthStore()
 const router = useRouter()
