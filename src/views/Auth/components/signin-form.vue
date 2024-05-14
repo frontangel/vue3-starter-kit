@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { useVuelidate } from '@vuelidate/core'
 import { required, email, helpers, minLength } from '@vuelidate/validators'
-import { iSignInForm } from '~/api/auth.api.ts'
 import VaButton from '~/components/common/Buttons/va-button.vue'
 import {shallowReactive} from "vue";
+import { iSignInForm } from '~/interfaces/auth.interfaces.ts';
 
 const form = defineModel<iSignInForm>({ default: shallowReactive({ email: '', password: '' })})
 

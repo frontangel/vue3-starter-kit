@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import LoginForm from '~/views/Auth/components/signin-form.vue'
 import { useAuthStore } from '~/store/auth.store.ts'
-import { iSignInForm } from '~/api/auth.api.ts'
 import VaEmpty from '~/components/common/Placeholders/va-empty.vue'
 import {shallowReactive} from "vue";
 import {
@@ -12,6 +11,7 @@ import {
   loginStoreSnippet,
   axiosInstanceSnippet
 } from "~/lib/login.snippets.ts";
+import { iSignInForm } from '~/interfaces/auth.interfaces.ts';
 
 const authStore = useAuthStore()
 
