@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from 'axios'
+import axios, { AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 import { useEventBus, useLocalStorage } from '@vueuse/core'
 
 import useMock from '~/api/mock/adapter.mock.ts'
@@ -14,31 +14,34 @@ const apiInstance = axios.create({
   baseURL: import.meta.env.VITE_APP_API_URL,
 })
 
-apiInstance.interceptors.request.use(
-  config=> {
-    const { url } = config
+function updateAccessToken(newAccessToken: string): void {
+  accessToken.value = newAccessToken;
+}
 
-    const authPaths = ['/auth/login', '/auth/refresh']
-    if (!authPaths.some(path => (url as string).includes(path))) {
-      config.headers.Authorization = `Bearer ${accessToken.value}`
-    }
+function clearTokens(): void {
+  refreshToken.value = '';
+  accessToken.value = '';
+}
 
-    return config
-  },
-  error => {
-    return Promise.reject(error);
+function attachAuthorizationHeader(config: AxiosRequestConfig): InternalAxiosRequestConfig {
+  if (!config.headers) {
+    config.headers = {};
   }
-)
+  const authPaths = ['/auth/login', '/auth/refresh'];
+  if (config.url && !authPaths.some(path => config.url?.includes(path))) {
+    config.headers.Authorization = `Bearer ${accessToken.value}`;
+  }
+  return config as InternalAxiosRequestConfig;
+}
 
+apiInstance.interceptors.request.use(attachAuthorizationHeader, Promise.reject)
 apiInstance.interceptors.response.use(
   (response: AxiosResponse) => {
     isRefreshed.value = false
     return response.data as any
   },
   async (error) => {
-
     const originalRequest = error.config
-    console.log(error)
 
     if (error.response && error.response.status === 401 && !originalRequest._retry) {
       if (!isRefreshed.value) {
@@ -46,14 +49,13 @@ apiInstance.interceptors.response.use(
         originalRequest._retry = true;
         try {
           const response = await axios.post(`${import.meta.env.VITE_APP_API_URL}/auth/refresh`, { refreshToken: refreshToken.value })
-          accessToken.value = response.data.accessToken
+          updateAccessToken(response.data.accessToken)
           originalRequest.headers['Authorization'] = `Bearer ${accessToken.value}`;
           isRefreshed.value = true;
           return apiInstance(originalRequest);
         } catch (refreshError) {
           isRefreshed.value = false;
-          refreshToken.value = ''
-          accessToken.value = ''
+          clearTokens()
         }
       }
     }
@@ -67,6 +69,7 @@ apiInstance.interceptors.response.use(
   }
 );
 
-
+// Comment the next line to disable mock
 useMock(apiInstance)
+
 export default apiInstance

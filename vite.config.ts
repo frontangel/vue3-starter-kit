@@ -10,7 +10,6 @@ import { VantResolver } from 'unplugin-vue-components/resolvers'
 import dotenv from 'dotenv'
 dotenv.config()
 
-
 const pathSrc = path.resolve(__dirname, 'src')
 export default defineConfig({
   resolve: {

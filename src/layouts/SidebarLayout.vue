@@ -6,13 +6,14 @@ import SidebarMenu from '~/views/Guide/components/SidebarMenu.vue'
 import {nextTick, onBeforeUnmount, onMounted, shallowRef} from "vue";
 import {useConfigStore} from "~/store/config.store.ts";
 import {useWindow} from "~/utils/window.utils.ts";
+import PrevNextButtons from "~/views/Guide/components/PrevNextButtons.vue";
 
 const route = useRoute()
 const configStore = useConfigStore()
 const { observeTeleport } = useWindow()
 
 const observer = shallowRef()
-const footerIsNotEmpty = shallowRef(true)
+const footerIsNotEmpty = shallowRef(false)
 function onFooterTeleported(value: boolean) {
   footerIsNotEmpty.value = value
 }
@@ -49,9 +50,10 @@ onBeforeUnmount(() => {
             <component :is="Component" />
           </transition>
         </router-view>
+        <prev-next-buttons />
       </main>
-      <hr v-if="configStore.isRendered && footerIsNotEmpty" class="ml-4 mr-4">
-      <footer id="footer" v-show="footerIsNotEmpty" />
+      <hr v-if="footerIsNotEmpty && configStore.isRendered.footer" class="ml-4 mr-4">
+      <footer id="footer" :class="{ empty: !footerIsNotEmpty }" />
     </div>
   </div>
 </template>

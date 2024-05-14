@@ -43,7 +43,7 @@ export const guideRoutes: any[] = [
       {
         path: 'api',
         name: 'Api',
-        component: () => import('~/views/Guide/QuickStartView.vue'),
+        component: () => import('~/views/Guide/ApiView.vue'),
         meta: {
           title: 'Api'
         }

@@ -2,7 +2,7 @@
 import {useConfigStore} from "~/store/config.store.ts";
 import {shallowRef} from "vue";
 
-const { isRendered } = useConfigStore()
+const configStore = useConfigStore()
 const isMoved = shallowRef(false)
 </script>
 <template>
@@ -11,8 +11,13 @@ const isMoved = shallowRef(false)
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis ducimus ea, illo ipsum iste minus
         mollitia! Atque beatae culpa illum in, laboriosam nihil numquam obcaecati odio quas repellendus ut vero!</p>
     </div>
-    <teleport v-if="isRendered.footer" :to="isMoved ? '#footer' : '#teleportPage'">
+    <template v-if="configStore.isRendered.footer && isMoved">
+      <teleport to="#footer">
+        <va-button @click="isMoved = !isMoved">Move to {{ !isMoved ? '#footer' : '#teleportPage' }}</va-button>
+      </teleport>
+    </template>
+    <template v-else>
       <va-button @click="isMoved = !isMoved">Move to {{ !isMoved ? '#footer' : '#teleportPage' }}</va-button>
-    </teleport>
+    </template>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import {computed, provide, useSlots} from "vue";
 withDefaults(defineProps<{
-  controlsPosition: 'top' | 'bottom'
+  controlsPosition?: 'top' | 'bottom'
 }>(), {
   controlsPosition: () => 'top'
 })

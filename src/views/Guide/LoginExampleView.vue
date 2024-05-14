@@ -31,16 +31,18 @@ function onLogout() {
 
 <template>
   <div>
-    <va-empty v-if="authStore.isAuth" class="mb-8" content="You are is logged in">
-      <va-button @click="onLogout">Logout</va-button>
-    </va-empty>
-    <div v-else style="max-width: 480px; margin: 0 auto">
-      <login-form v-model="form" :loading="authStore.loading" @submit="onSubmit" />
+    <div class="mb-8">
+      <va-empty v-if="authStore.isAuth" content="You are is logged in">
+        <va-button @click="onLogout">Logout</va-button>
+      </va-empty>
+      <div v-else style="max-width: 480px; margin: 0 auto">
+        <login-form v-model="form" :loading="authStore.loading" @submit="onSubmit" />
+      </div>
     </div>
 
     <va-tabs>
       <va-tab label="Login View">
-        <code-snippet language="JavaScript" text="script" :code="loginViewScriptSnippet" />
+        <code-snippet language="JavaScript" text="script" :code="loginViewScriptSnippet" class="mb-8" />
         <code-snippet text="template" :code="loginViewTemplateSnippet" />
       </va-tab>
       <va-tab label="Form Component">

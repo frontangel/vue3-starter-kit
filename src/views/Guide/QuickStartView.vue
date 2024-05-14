@@ -113,14 +113,24 @@ $controls-size: (
 <template>
   <section>
     <h3>Clone the project</h3>
-    <code-snippet language="bash" code="git clone git@github.com:frontangel/vue3-starter-kit.git"/>
+    <code-snippet language="bash" code="git clone git@github.com:frontangel/vue3-starter-kit.git" class="mb-8" />
 
-    <h3>Config UnoCSS <a class="title-link" rel="nofollow" target="_blank" href="https://unocss.dev/guide/config-file">[Documentation]</a></h3>
-    <code-snippet language="js" text="uno.config.ts" :code="unoConfig"/>
+    <va-tabs>
+      <va-tab label="Config UnoCSS">
+        UnoCSS <a class="title-link" rel="nofollow" target="_blank" href="https://unocss.dev/guide/config-file">[Documentation]</a>
+        <code-snippet language="js" text="uno.config.ts" :code="unoConfig" />
+      </va-tab>
+      <va-tab label="Config SCSS">
+        <code-snippet language="css" text="styles/_root.scss" :code="rootConfig" class="mb-8" />
+        <code-snippet language="css" text="styles/_config.scss" :code="configConfig" />
+      </va-tab>
+    </va-tabs>
+<!--    <h3>Config UnoCSS <a class="title-link" rel="nofollow" target="_blank" href="https://unocss.dev/guide/config-file">[Documentation]</a></h3>-->
+<!--    <code-snippet language="js" text="uno.config.ts" :code="unoConfig"/>-->
 
-    <h3>Config SCSS</h3>
-    <code-snippet language="css" text="styles/_root.scss" :code="rootConfig"/>
-    <code-snippet language="css" text="styles/_config.scss" :code="configConfig"/>
+<!--    <h3>Config SCSS</h3>-->
+<!--    <code-snippet language="css" text="styles/_root.scss" :code="rootConfig"/>-->
+<!--    <code-snippet language="css" text="styles/_config.scss" :code="configConfig"/>-->
   </section>
 </template>
 
