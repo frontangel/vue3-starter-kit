@@ -6,8 +6,6 @@ import {shallowReactive} from "vue";
 import {
   loginFormScriptSnippet,
   loginFormTemplateSnippet,
-  loginViewScriptSnippet,
-  loginViewTemplateSnippet,
   loginStoreSnippet,
   axiosInstanceSnippet
 } from "~/lib/login.snippets.ts";
