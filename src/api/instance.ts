@@ -1,11 +1,11 @@
 import axios, { AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
-import { useEventBus, useLocalStorage } from '@vueuse/core'
+import { useLocalStorage } from '@vueuse/core'
 
 import useMock from '~/api/mock/adapter.mock.ts'
-import { INotificationOptions } from '~/interfaces/notification.interface.ts'
 import { shallowRef } from 'vue'
+import { useNotify } from '~/utils/notify.utils.ts';
 
-const notificationsBus = useEventBus<string>('notification')
+const { notify } = useNotify()
 const refreshToken = useLocalStorage('refreshToken', '')
 const accessToken = useLocalStorage('accessToken', '')
 const isRefreshed = shallowRef(false)
@@ -62,7 +62,7 @@ apiInstance.interceptors.response.use(
 
     const message = error.response.data.message
     if (message) {
-      notificationsBus.emit('notify', { message, variant: 'danger', delay: 4000 } as INotificationOptions)
+      notify({ message, variant: 'danger', delay: 4000 })
     }
 
     return Promise.reject(error);

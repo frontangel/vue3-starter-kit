@@ -1,34 +1,29 @@
 .va-notifications {
   position: fixed;
-  top: 1rem;
+  top: 2rem;
   height: 0;
-  width: 100%;
-  &__wrap {
-    display: flex;
-    margin: 0 auto;
-    width: fit-content;
-    gap: var(--notifications-gap);
-    flex-direction: column;
-    justify-content: center;
-    transition: height 0.3s;
-  }
+  left: 4rem;
+  right: 4rem;
+  display: flex;
+  gap: var(--notifications-gap);
+  flex-direction: column;
+  z-index: 1000;
   &__item {
-    transform: translateY(-300%);
-    opacity: 0;
-    transition: all .3s;
+    opacity: 1;
     display: flex;
     width: fit-content;
-    background-color: white;
-    padding: 0.25rem 2rem;
-    margin: 0 auto;
+    padding: 0.75rem 1rem;
     box-shadow: 0 10px 16px 0 rgba(0,0,0, 0.1);
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     border-radius: 2px;
     gap: 1rem;
-    &.show {
-      transform: translateY(0);
-      opacity: 1;
+    min-width: 200px;
+    white-space: nowrap;
+    background-color: var(--notification-info-bg);
+    align-self: center;
+    &.right {
+      align-self: flex-end;
     }
     &.is-danger {
       color: var(--danger-color);

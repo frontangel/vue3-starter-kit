@@ -1,18 +1,15 @@
 import { defineStore } from 'pinia'
-import {reactive, shallowRef} from "vue";
+import { shallowRef } from "vue";
+import { useLocalStorage } from '@vueuse/core';
 
 export const useConfigStore = defineStore('config', () => {
   const allFieldsClearable = shallowRef(false)
-  const isMoved = shallowRef(false)
-  const isRendered = reactive({
-    footer: false
-  })
+  const isMoved = useLocalStorage<boolean>('is-moved', false)
   function toggleMove() {
     isMoved.value = !isMoved.value
   }
   return {
     allFieldsClearable,
-    isRendered,
     isMoved,
     toggleMove
   }

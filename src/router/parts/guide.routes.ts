@@ -97,6 +97,22 @@ export const guideRoutes: any[] = [
         },
       },
       {
+        path: 'tabs-example',
+        name: 'TabsExample',
+        component: () => import('~/views/Guide/TabsExampleView.vue'),
+        meta: {
+          title: 'Tabs Example'
+        }
+      },
+      {
+        path: 'notification-example',
+        name: 'NotificationExample',
+        component: () => import('~/views/Guide/NotificationsExampleView.vue'),
+        meta: {
+          title: 'Notification Example'
+        }
+      },
+      {
         path: 'teleport-example',
         name: 'TeleportExample',
         component: () => import('~/views/Guide/TeleportView.vue'),

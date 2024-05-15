@@ -18,8 +18,8 @@ export const architectureMenu: iMenu[] = [
 export const examplesMenu: iMenu[] = [
   { text: 'Login Page', name: 'LoginExample' },
   { text: 'Not for guest', name: 'AccessExample' },
-  { text: 'Tabs', disabled: true, name: 'TabsExample' },
-  { text: 'Notification', disabled: true, name: 'NotificationExample' },
+  { text: 'Tabs', name: 'TabsExample' },
+  { text: 'Notification', name: 'NotificationExample' },
   { text: 'Teleport', name: 'TeleportExample' },
   { text: 'Config Provider', disabled: true, name: 'ConfigProviderExample' },
 ]
