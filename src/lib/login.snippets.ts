@@ -55,8 +55,7 @@ function clearForm () {
   v$.value.$reset()
 }`
 
-export const loginFormTemplateSnippet = `
-<template>
+export const loginFormTemplateSnippet = `<template>
   <va-form :loading="loading" :rules="v$" @submit="onSubmit">
     <va-input-wrapper label="Email:" prop="email">
       <va-input v-model="form.email" reset-on-input placeholder="mail@domain.com" />

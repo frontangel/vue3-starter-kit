@@ -10,7 +10,7 @@ export const architectureMenu: iMenu[] = [
   { text: 'Router', name: 'Api' },
   { text: 'Store', name: 'Store' },
   { text: 'Layouts', name: 'Layouts' },
-  { text: 'Views', disabled: true, name: '' },
+  { text: 'Views', name: 'Views' },
   { text: 'Components', disabled: true, name: '' },
   { text: 'Styles', disabled: true, name: '' },
 ]

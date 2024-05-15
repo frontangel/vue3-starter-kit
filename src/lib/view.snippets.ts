@@ -1,4 +1,4 @@
-<script setup lang="ts">
+export const loginPageViewSnippet = `<script setup lang="ts">
 import { useRoute, useRouter } from 'vue-router';
 import LoginForm from '~/views/Auth/components/signin-form.vue'
 import { useAuthStore } from '~/store/auth.store.ts'
@@ -19,3 +19,4 @@ function onSubmit(payload: iSignInForm) {
     <login-form ref="loginForm" :loading="authStore.loading" @submit="onSubmit" />
   </div>
 </template>
+`

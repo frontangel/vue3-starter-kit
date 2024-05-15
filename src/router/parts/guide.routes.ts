@@ -56,6 +56,14 @@ export const guideRoutes: any[] = [
         }
       },
       {
+        path: 'views',
+        name: 'Views',
+        component: () => import('~/views/Guide/ViewsView.vue'),
+        meta: {
+          title: 'Views'
+        }
+      },
+      {
         path: 'login-example',
         name: 'LoginExample',
         component: () => import('~/views/Guide/LoginExampleView.vue'),
@@ -64,7 +72,7 @@ export const guideRoutes: any[] = [
         }
       },
       {
-        path: '/guide/access-example',
+        path: 'access-example',
         name: 'AccessExample',
         component: () => import('~/views/Guide/AccessExampleView.vue'),
         meta: {

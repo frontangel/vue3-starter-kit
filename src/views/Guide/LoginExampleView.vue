@@ -12,6 +12,7 @@ import {
   axiosInstanceSnippet
 } from "~/lib/login.snippets.ts";
 import { iSignInForm } from '~/interfaces/auth.interfaces.ts';
+import { loginPageViewSnippet } from '~/lib/view.snippets.ts';
 
 const authStore = useAuthStore()
 
@@ -42,8 +43,7 @@ function onLogout() {
 
     <va-tabs>
       <va-tab label="Login View">
-        <code-snippet language="JavaScript" text="script" :code="loginViewScriptSnippet" class="mb-8" />
-        <code-snippet text="template" :code="loginViewTemplateSnippet" />
+        <code-snippet language="JavaScript" text="SignInView.vue" :code="loginPageViewSnippet" />
       </va-tab>
       <va-tab label="Form Component">
         <code-snippet language="JavaScript" text="script" :code="loginFormScriptSnippet" />
