@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, defineAsyncComponent, onMounted, shallowRef } from 'vue'
+import { computed, defineAsyncComponent, shallowRef } from 'vue'
 import { whenever } from '@vueuse/core'
 
 const props = withDefaults(defineProps<{
