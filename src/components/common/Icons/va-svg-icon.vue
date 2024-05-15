@@ -20,15 +20,13 @@ function updateComponent(icon: string) {
   )
 }
 
-whenever(() => props.icon,updateComponent)
+whenever(() => props.icon, updateComponent)
 updateComponent(props.icon)
 
 const iconSize = computed(() => ({
   height: props.height || props.size,
   width: props.width || props.size,
 }))
-
-onMounted(() => {})
 </script>
 <template>
   <span class="svg-icon" :style="`height: ${iconSize.height}px; width: ${iconSize.width}px`">

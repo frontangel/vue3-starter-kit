@@ -11,17 +11,17 @@ export const architectureMenu: iMenu[] = [
   { text: 'Store', name: 'Store' },
   { text: 'Layouts', name: 'Layouts' },
   { text: 'Views', name: 'Views' },
-  { text: 'Components', disabled: true, name: '' },
-  { text: 'Styles', disabled: true, name: '' },
+  { text: 'Components', name: 'Components' },
+  { text: 'Styles', disabled: true, name: 'Styles' },
 ]
 
 export const examplesMenu: iMenu[] = [
-  { text: 'Login Form', name: 'LoginExample' },
+  { text: 'Login Page', name: 'LoginExample' },
   { text: 'Not for guest', name: 'AccessExample' },
-  { text: 'Table', disabled: true, name: '' },
-  { text: 'Notification', disabled: true, name: '' },
+  { text: 'Tabs', disabled: true, name: 'TabsExample' },
+  { text: 'Notification', disabled: true, name: 'NotificationExample' },
   { text: 'Teleport', name: 'TeleportExample' },
-  { text: 'Config Provider', disabled: true, name: '' },
+  { text: 'Config Provider', disabled: true, name: 'ConfigProviderExample' },
 ]
 
 export const instrumentsMenu: iMenu[] = [

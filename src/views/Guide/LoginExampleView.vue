@@ -2,7 +2,7 @@
 import LoginForm from '~/views/Auth/components/signin-form.vue'
 import { useAuthStore } from '~/store/auth.store.ts'
 import VaEmpty from '~/components/common/Placeholders/va-empty.vue'
-import {shallowReactive} from "vue";
+import { shallowReactive } from 'vue';
 import {
   loginFormScriptSnippet,
   loginFormTemplateSnippet,
