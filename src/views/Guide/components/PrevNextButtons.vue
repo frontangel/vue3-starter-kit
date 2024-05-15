@@ -22,7 +22,7 @@ const prev = computed(() => current.value > 0 ? navList.value[current.value - 1]
 const next = computed(() => current.value < navList.value.length ? navList.value[current.value + 1] : null)
 </script>
 <template>
-  <div class="prev-next-buttons flex justify-between mt-8">
+  <div class="prev-next-buttons flex justify-between">
     <router-link v-if="prev" :to="{ name: prev.name }" class="prev-button">
       <div class="cat">{{ prev.category }}</div>
       <div><va-svg-icon icon="arrow-left" size="14" /> {{ prev.text }}</div>

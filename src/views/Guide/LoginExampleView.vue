@@ -18,27 +18,19 @@ const form = shallowReactive<iSignInForm>({
   email: 'mail@domain.com',
   password: 'qwerty123'
 })
-
-function onSubmit(payload: iSignInForm) {
-  authStore.signIn(payload)
-}
-
-function onLogout() {
-  authStore.logout()
-}
 </script>
 
 <template>
   <div>
     <div class="mb-8">
       <va-empty v-if="authStore.isAuth" content="You are is logged in">
-        <va-button @click="onLogout">Logout</va-button>
+        <va-button @click="authStore.logout">Logout</va-button>
       </va-empty>
       <div v-else style="max-width: 480px; margin: 0 auto">
-        <login-form v-model="form" :loading="authStore.loading" @submit="onSubmit" />
+        <login-form v-model="form" :loading="authStore.loading" @submit="authStore.signIn" />
       </div>
     </div>
-    
+
     <va-tabs>
       <va-tab label="Login View">
         <code-snippet language="JavaScript" text="SignInView.vue" :code="loginPageViewSnippet" />

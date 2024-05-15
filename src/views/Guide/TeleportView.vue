@@ -1,23 +1,15 @@
 <script lang="ts" setup>
 import {useConfigStore} from "~/store/config.store.ts";
-import {shallowRef} from "vue";
-
+import { teleportComponentsSnippet, usageTeleportSnippet } from '~/lib/teleport.snippets.ts';
 const configStore = useConfigStore()
-const isMoved = shallowRef(false)
 </script>
 <template>
   <div>
-    <div id="teleportPage">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis ducimus ea, illo ipsum iste minus
-        mollitia! Atque beatae culpa illum in, laboriosam nihil numquam obcaecati odio quas repellendus ut vero!</p>
-    </div>
-    <template v-if="configStore.isRendered.footer && isMoved">
-      <teleport to="#footer">
-        <va-button @click="isMoved = !isMoved">Move to {{ !isMoved ? '#footer' : '#teleportPage' }}</va-button>
-      </teleport>
-    </template>
-    <template v-else>
-      <va-button @click="isMoved = !isMoved">Move to {{ !isMoved ? '#footer' : '#teleportPage' }}</va-button>
-    </template>
+    <p>The problem with the standard <b class="text-primary">Teleport</b> in Vue is that it doesn't check for the presence of the target element before moving the content. Therefore, I propose creating a custom component based on the standard <b class="text-primary">Teleport</b>.</p>
+
+    <code-snippet :code="teleportComponentsSnippet" text="va-teleport.vue" class="mb-8" />
+    <code-snippet :code="usageTeleportSnippet" text="Usage" class="mb-8" />
+
+    <va-button @click="configStore.toggleMove" class="mb-8">Move {{ !configStore.isMoved ? 'to #footer' : 'back' }}</va-button>
   </div>
 </template>

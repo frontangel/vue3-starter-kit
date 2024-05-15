@@ -3,33 +3,34 @@ import { useRoute } from 'vue-router'
 import LogoBlock from '~/components/features/LogoBlock.vue'
 import ThemeSwitcher from '~/components/features/ThemeSwitcher.vue'
 import SidebarMenu from '~/views/Guide/components/SidebarMenu.vue'
-import {nextTick, onBeforeUnmount, onMounted, shallowRef} from "vue";
+import { ref } from 'vue';
 import {useConfigStore} from "~/store/config.store.ts";
-import {useWindow} from "~/utils/window.utils.ts";
 import PrevNextButtons from "~/views/Guide/components/PrevNextButtons.vue";
+import VaTeleport from '~/components/common/Elements/va-teleport.vue';
 
 const route = useRoute()
 const configStore = useConfigStore()
-const { observeTeleport } = useWindow()
+// const { observeTeleport } = useWindow()
 
-const observer = shallowRef()
-const footerIsNotEmpty = shallowRef(false)
-function onFooterTeleported(value: boolean) {
-  footerIsNotEmpty.value = value
-}
+// const observer = shallowRef()
+const footerIsEmpty = ref(false)
+// function onFooterTeleported(value: boolean) {
+//   console.log('onFooterTeleported');
+//   footerIsNotEmpty.value = value
+// }
 
-onMounted(() => {
-  nextTick(() => {
-    configStore.isRendered.footer = !!document.getElementById('footer')
-    if (configStore.isRendered.footer && !observer.value) {
-      observer.value = observeTeleport('footer', onFooterTeleported)
-    }
-  })
-})
-
-onBeforeUnmount(() => {
-  observer.value?.disconnect();
-})
+// onMounted(() => {
+//   nextTick(() => {
+//     configStore.isRendered.footer = !!document.getElementById('footer')
+//     if (configStore.isRendered.footer && !observer.value) {
+//       observer.value = observeTeleport('footer', onFooterTeleported)
+//     }
+//   })
+// })
+//
+// onBeforeUnmount(() => {
+//   observer.value?.disconnect();
+// })
 </script>
 <template>
   <div class="sidebar-layout flex">
@@ -56,10 +57,14 @@ onBeforeUnmount(() => {
             <component :is="Component" />
           </transition>
         </router-view>
-        <prev-next-buttons />
+
+        <va-teleport v-model="configStore.isMoved" to="#footer">
+          <prev-next-buttons />
+        </va-teleport>
       </main>
-      <hr v-if="footerIsNotEmpty && configStore.isRendered.footer" class="ml-4 mr-4">
-      <footer id="footer" :class="{ empty: !footerIsNotEmpty }" />
+
+      <hr class="ml-4 mr-4" v-if="!footerIsEmpty">
+      <footer id="footer" class="!md-px-8" :class="{ empty: footerIsEmpty }" v-detect-children="{ callback: (value: boolean) => footerIsEmpty = !value }" />
     </div>
   </div>
 </template>

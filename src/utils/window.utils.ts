@@ -6,11 +6,11 @@ export function useWindow() {
     setDataTheme(payload)
   }
 
-  const observeTeleport = (elementId: string, externalCallback: Function) => {
-    const targetNode = document.getElementById(elementId);
+  const observeTeleport = (elementId: string, externalCallback: Function, tNode?: HTMLElement) => {
+    const targetNode = tNode || document.getElementById(elementId);
     if (!targetNode) return
 
-    const config = { childList: true };
+    const config = { childList: true, subtree: true };
 
     const callback = function(mutationsList: any[]) {
       for(let mutation of mutationsList) {
