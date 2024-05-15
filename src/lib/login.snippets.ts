@@ -61,7 +61,7 @@ export const loginFormTemplateSnippet = `<template>
       <va-input v-model="form.email" reset-on-input placeholder="mail@domain.com" />
     </va-input-wrapper>
 
-    <va-input-wrapper label="Password:" prop="password" :errors="v$.password.$errors">
+    <va-input-wrapper label="Password:" prop="password">
       <va-input v-model="form.password" password placeholder="qwerty123" />
     </va-input-wrapper>
 

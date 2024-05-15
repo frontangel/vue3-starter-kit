@@ -40,7 +40,13 @@ onBeforeUnmount(() => {
     </div>
     <div class="main-container">
       <header class="flex items-center justify-end">
-        <theme-switcher />
+        <a href="https://www.linkedin.com/in/angelslava" target="_blank" rel="nofollow" class="external-link">
+          <va-svg-icon icon="linkedin" size="18" />
+        </a>
+        <a href="https://github.com/frontangel/vue3-starter-kit" target="_blank" rel="nofollow" class="external-link">
+          <va-svg-icon icon="git" size="18" />
+        </a>
+        <theme-switcher class="ml-2" />
       </header>
       <hr class="ml-4 mr-4">
       <main class="!md-px-8">
@@ -57,5 +63,15 @@ onBeforeUnmount(() => {
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.external-link {
+  color: var(--dark-info-color);
+  transition: color 0.3s;
+  &:hover {
+    color: var(--text-color);
+  }
+}
+</style>
 
 

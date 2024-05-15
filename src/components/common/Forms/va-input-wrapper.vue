@@ -40,7 +40,7 @@ function resetField() {
     </div>
     <slot name="label" :label="label" />
     <slot />
-    <div v-if="isError && !$slots.error" class="va-field-control__error">{{ computedErrors[0].$message }}</div>
-    <slot name="error" :error="isError ? computedErrors[0].$message : ''" :errors="computedErrors" />
+    <div v-if="isError && !$slots.error" class="va-field-control__error">{{ computedErrors[0]?.$message }}</div>
+    <slot name="error" :error="isError ? computedErrors[0]?.$message : ''" :errors="computedErrors" />
   </div>
 </template>

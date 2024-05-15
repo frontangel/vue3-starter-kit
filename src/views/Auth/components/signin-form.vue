@@ -49,7 +49,7 @@ function clearForm () {
     </va-input-wrapper>
 
     <!-- prop variant -->
-    <va-input-wrapper label="Password:" prop="password" :errors="v$.password.$errors">
+    <va-input-wrapper label="Password:" prop="password">
       <va-input v-model="form.password" password placeholder="qwerty123" />
     </va-input-wrapper>
 

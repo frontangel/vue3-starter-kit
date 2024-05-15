@@ -12,7 +12,7 @@ export const architectureMenu: iMenu[] = [
   { text: 'Layouts', name: 'Layouts' },
   { text: 'Views', name: 'Views' },
   { text: 'Components', name: 'Components' },
-  { text: 'Styles', disabled: true, name: 'Styles' },
+  { text: 'Styles', name: 'Styles' },
 ]
 
 export const examplesMenu: iMenu[] = [

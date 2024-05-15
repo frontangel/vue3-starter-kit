@@ -38,7 +38,7 @@ function onLogout() {
         <login-form v-model="form" :loading="authStore.loading" @submit="onSubmit" />
       </div>
     </div>
-
+    
     <va-tabs>
       <va-tab label="Login View">
         <code-snippet language="JavaScript" text="SignInView.vue" :code="loginPageViewSnippet" />
