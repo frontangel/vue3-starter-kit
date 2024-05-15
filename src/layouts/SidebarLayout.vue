@@ -10,27 +10,8 @@ import VaTeleport from '~/components/common/Elements/va-teleport.vue';
 
 const route = useRoute()
 const configStore = useConfigStore()
-// const { observeTeleport } = useWindow()
 
-// const observer = shallowRef()
 const footerIsEmpty = ref(false)
-// function onFooterTeleported(value: boolean) {
-//   console.log('onFooterTeleported');
-//   footerIsNotEmpty.value = value
-// }
-
-// onMounted(() => {
-//   nextTick(() => {
-//     configStore.isRendered.footer = !!document.getElementById('footer')
-//     if (configStore.isRendered.footer && !observer.value) {
-//       observer.value = observeTeleport('footer', onFooterTeleported)
-//     }
-//   })
-// })
-//
-// onBeforeUnmount(() => {
-//   observer.value?.disconnect();
-// })
 </script>
 <template>
   <div class="sidebar-layout flex">
