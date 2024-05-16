@@ -7,8 +7,10 @@
   --light-info-color: #{map-get(config.$colors, 'light-info')};
   --danger-color:  #{map-get(config.$colors, 'danger')};
   --primary-color:  #{map-get(config.$colors, 'primary')};
+  --secondary-color:  #{map-get(config.$colors, 'secondary')};
 
   --primary-color-lighten:  #{lighten(map-get(config.$colors, 'primary'), 5%)};
+  --secondary-color-lighten:  #{lighten(map-get(config.$colors, 'secondary'), 5%)};
   --white-color: #fff;
   --dark-info-color: #999;
 
@@ -21,6 +23,7 @@
   --notifications-item-height: 40px;
   --notifications-gap: 8px;
   --notifications-danger-bg:  #{lighten(map-get(config.$colors, 'danger'), 43%)};
+  --notifications-secondary-bg:  #{lighten(map-get(config.$colors, 'secondary'), 0%)};
 
   // inputs
   --input-border-radius: var(--border-radius);

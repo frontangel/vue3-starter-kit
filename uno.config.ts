@@ -13,7 +13,13 @@ export default defineConfig({
   shortcuts: [],
   theme: {
     colors: {
-      primary: '#f067b0'
+      primary: '#f067b0',
+      secondary: '#41d2ff',
+      success: '#28a745',
+      warning: '#ffc107',
+      danger: '#dc3545',
+      dark: '#3c3a44',
+      info: '#ededed'
     },
     breakpoints: {
       xs: '320px',

@@ -29,5 +29,9 @@
       color: var(--danger-color);
       background-color: var(--notifications-danger-bg);
     }
+    &.is-secondary {
+      color: var(--white-color);
+      background-color: var(--notifications-secondary-bg);
+    }
   }
 }

@@ -23,6 +23,14 @@ button {
       --button-bg-color: var(--primary-color-lighten);
     }
   }
+  &__secondary {
+    --button-bg-color: var(--secondary-color);
+    --button-border-color: var(--secondary-color);
+    --button-text-color: var(--white-color);
+    &:hover {
+      --button-bg-color: var(--secondary-color-lighten);
+    }
+  }
   &__danger {
     --button-bg-color: var(--danger-color);
     --button-border-color: var(--danger-color);
