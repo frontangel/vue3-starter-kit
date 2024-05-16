@@ -121,11 +121,11 @@ export const guideRoutes: any[] = [
         }
       },
       {
-        path: 'config-provider',
-        name: 'ConfigProvider',
-        component: () => import('~/views/Guide/ConfigProviderView.vue'),
+        path: 'config-provider-example',
+        name: 'ConfigProviderExample',
+        component: () => import('~/views/Guide/ConfigProviderExampleView.vue'),
         meta: {
-          title: 'Config Provider'
+          title: 'Config Provider Example'
         }
       },
     ]

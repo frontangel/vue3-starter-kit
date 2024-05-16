@@ -1,9 +1,6 @@
 <script lang="ts" setup>
-import { provide, shallowRef } from 'vue'
-
-export interface iConfig {
-  allFieldsClearable?: boolean
-}
+import { provide, ref } from 'vue';
+import { iConfig } from '~/interfaces/config.interface.ts';
 
 const props = withDefaults(defineProps<{
   options?: iConfig
@@ -13,7 +10,7 @@ const props = withDefaults(defineProps<{
   })
 })
 
-const globalOptions = shallowRef(props.options)
+const globalOptions = ref(props.options)
 provide('globalOptions', globalOptions)
 </script>
 

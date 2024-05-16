@@ -18,7 +18,7 @@ const styles = computed(() => ({
 }))
 </script>
 <template>
-  <div class="va-switcher" @click="model = !model">
+  <div class="va-switcher" :class="{ 'is-checked': model }" @click="model = !model">
     <div v-if="prefix" class="va-switcher__prefix">{{ prefix }}</div>
     <div class="va-switcher__control">
       <input v-model="model" type="checkbox" />
@@ -43,11 +43,11 @@ const styles = computed(() => ({
       content: '';
       position: absolute;
       z-index: 1;
-      height: calc(100% + 2px);
-      width: calc(100% + 2px);
+      height: calc(100% + 4px);
+      width: calc(100% + 4px);
       left: 50%;
       top: 50%;
-      background-color: var(--input-checkbox-background);
+      background-color: var(--white-color);
       border-radius: 50px;
       border: 1px solid var(--input-border-color);
       transform: translate(-50%, -50%);
@@ -61,6 +61,7 @@ const styles = computed(() => ({
       &:checked {
         + .va-switcher__button {
           left: calc(100% - var(--input-checkbox-height) - 1px);
+          background-color: var(--primary-color);
         }
       }
     }
@@ -80,6 +81,15 @@ const styles = computed(() => ({
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+    }
+  }
+  &.is-checked {
+    .va-switcher {
+      &__control {
+        &:before {
+          border-color: var(--primary-color-lighten);
+        }
+      }
     }
   }
 }

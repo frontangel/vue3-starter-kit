@@ -32,7 +32,7 @@ onBeforeUnmount(unsubscribe)
 </script>
 
 <template>
-  <global-provide-config :options="configStore.$state">
+  <global-provide-config :options="configStore.config">
     <component :is="layout">
       <router-view />
     </component>
