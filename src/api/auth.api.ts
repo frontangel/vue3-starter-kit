@@ -1,8 +1,8 @@
 import apiInstance from './instance.ts'
-import { iSignInForm } from '~/interfaces/auth.interfaces.ts';
+import { iSignInForm, isSignInResponse } from '~/interfaces/auth.interfaces.ts';
 
 const AuthApi = {
-  signIn(data: iSignInForm): Promise<{ accessToken: string; refreshToken: string }> {
+  signIn(data: iSignInForm): Promise<isSignInResponse> {
     return apiInstance.post('/auth/login', data)
   }
 }

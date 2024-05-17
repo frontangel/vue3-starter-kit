@@ -39,9 +39,7 @@ export const axiosInstanceSnippet = `import axios, { AxiosRequestConfig, AxiosRe
 import { useEventBus, useLocalStorage } from '@vueuse/core'
 import { shallowRef } from 'vue'
 import useMock from '~/api/mock/adapter.mock.ts'
-import { INotificationOptions } from '~/interfaces/notification.interface.ts'
 
-const notificationsBus = useEventBus('notification')
 const refreshToken = useLocalStorage('refreshToken', '')
 const accessToken = useLocalStorage('accessToken', '')
 const isRefreshed = shallowRef(false)
@@ -100,12 +98,6 @@ apiInstance.interceptors.response.use(
         }
       }
     }
-
-    const message = error.response.data.message
-    if (message) {
-      notificationsBus.emit('notify', { message, variant: 'danger', delay: 4000 } as INotificationOptions)
-    }
-
     return Promise.reject(error);
   }
 );

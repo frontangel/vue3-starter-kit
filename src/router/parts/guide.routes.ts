@@ -128,6 +128,14 @@ export const guideRoutes: any[] = [
           title: 'Config Provider Example'
         }
       },
+      {
+        path: 'quick-tips',
+        name: 'QuickTips',
+        component: () => import('~/views/Guide/QuickTipsView.vue'),
+        meta: {
+          title: 'Quick Tips'
+        }
+      },
     ]
   }
 ]

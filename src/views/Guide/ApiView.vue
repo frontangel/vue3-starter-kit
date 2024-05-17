@@ -3,7 +3,7 @@
 import ApiFolderScreen from '~/assets/img/api-folder-screen.png'
 </script>
 <template>
-  <div class="">
+  <div class="mb-8">
     <h3>The main tools for working with REST API are:</h3>
     <ul class="no-list !mb-8">
       <li><b>axios</b> - for organizing server requests</li>

@@ -22,6 +22,7 @@ export const examplesMenu: iMenu[] = [
   { text: 'Notification', name: 'NotificationExample' },
   { text: 'Teleport', name: 'TeleportExample' },
   { text: 'Config Provider', name: 'ConfigProviderExample' },
+  { text: 'Quick Tips', name: 'QuickTips' },
 ]
 
 export const instrumentsMenu: iMenu[] = [
