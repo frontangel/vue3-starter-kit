@@ -6,8 +6,8 @@ export const startMenu: iMenu[] = [
 ]
 
 export const architectureMenu: iMenu[] = [
-  { text: 'Api', name: 'Guide' },
-  { text: 'Router', name: 'Api' },
+  { text: 'Api', name: 'Api' },
+  { text: 'Router', name: 'Router' },
   { text: 'Store', name: 'Store' },
   { text: 'Layouts', name: 'Layouts' },
   { text: 'Views', name: 'Views' },
