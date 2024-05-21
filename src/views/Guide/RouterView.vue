@@ -4,7 +4,7 @@
 </script>
 
 <template>
-  <div>
+  <div class="mb-8">
     <h3>For convenience, a router can be divided into three main components:</h3>
     <ul class="no-list !mb-8">
       <li><b>parts</b> - sections of the router</li>

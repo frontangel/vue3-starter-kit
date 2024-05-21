@@ -26,8 +26,12 @@ export const examplesMenu: iMenu[] = [
 ]
 
 export const instrumentsMenu: iMenu[] = [
-  { text: 'VueForm', to: '/', disabled: true, name: '' },
-  { text: 'VueUse', to: '/', disabled: true, name: '' },
+  { text: 'Vuelidate', to: 'https://vuelidate-next.netlify.app/', external: true },
+  { text: 'VueUse', to: 'https://vueuse.org/', external: true },
+  { text: 'Faker', to: 'https://fakerjs.dev', external: true },
+  { text: 'Iconify', to: 'https://iconify.design', external: true },
+  { text: 'Mock adapter', to: 'https://github.com/ctimmerm/axios-mock-adapter', external: true },
+  { text: 'Pinia', to: 'https://pinia.vuejs.org/', external: true },
 ]
 
 export const navMenu = [

@@ -5,4 +5,5 @@ export interface iMenu {
   children?: iMenu[]
   category?: string
   disabled?: boolean
+  external?: boolean
 }

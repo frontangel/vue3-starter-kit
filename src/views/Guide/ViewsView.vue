@@ -3,7 +3,7 @@ import ViewsFolderScreen from '~/assets/img/views-folder-screen.png'
 import { loginPageViewSnippet } from '~/lib/view.snippets.ts';
 </script>
 <template>
-  <div class="">
+  <div class="mb-8">
     <h3><span class="text-primary">Views</span> folder is responsible for displaying content, composition, data handling, routing, user interaction, and styling for a specific page.</h3>
     <ul class="no-list !mb-8">
       <li><b>Content Display:</b> Responsible for showing the main content of the page when navigating to the corresponding route.</li>

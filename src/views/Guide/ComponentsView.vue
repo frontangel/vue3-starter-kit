@@ -3,7 +3,7 @@ import ComponentsFolderScreen from '~/assets/img/components-folder-screen.png'
 import { viteConfigComponentSnippet } from '~/lib/component.snippets.ts';
 </script>
 <template>
-  <div class="">
+  <div class="mb-8">
     <div class="flex gap-4 mb-8">
       <div class="image">
         <img :src="ComponentsFolderScreen" alt="ComponentsFolderScreen" width="230">

@@ -21,7 +21,7 @@ const form = shallowReactive<iSignInForm>({
 </script>
 
 <template>
-  <div>
+  <div class="mb-8">
     <div class="mb-8">
       <va-empty v-if="authStore.isAuth" content="You are is logged in">
         <va-button @click="authStore.logout">Logout</va-button>

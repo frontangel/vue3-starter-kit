@@ -10,19 +10,28 @@ const props = defineProps<{
   inactiveBtnColor?: string
   activeBtnBg?: string
   activeBtnColor?: string
+  activeBg?: string
+  activeBorderColor?: string
+  inactiveBg?: string
+  inactiveBorderColor?: string
 }>()
 
-const styles = computed(() => ({
+const btnStyles = computed(() => ({
   backgroundColor: model.value ? props.activeBtnBg : props.inactiveBtnBg,
   color: model.value ? props.activeBtnColor : props.inactiveBtnColor,
+}))
+
+const controlStyles = computed(() => ({
+  backgroundColor: model.value  ? props.activeBg : props.inactiveBg,
+  borderColor: model.value ? props.activeBorderColor : props.inactiveBorderColor,
 }))
 </script>
 <template>
   <div class="va-switcher" :class="{ 'is-checked': model }" @click="model = !model">
     <div v-if="prefix" class="va-switcher__prefix">{{ prefix }}</div>
-    <div class="va-switcher__control">
+    <div class="va-switcher__control" :style="controlStyles">
       <input v-model="model" type="checkbox" />
-      <div class="va-switcher__button" :style="styles"><va-animated-icon v-if="icon" :icon="icon" /></div>
+      <div class="va-switcher__button" :style="btnStyles"><va-animated-icon v-if="icon" :icon="icon" /></div>
     </div>
     <div v-if="suffix" class="va-switcher__suffix">{{ suffix }}</div>
   </div>
@@ -39,19 +48,9 @@ const styles = computed(() => ({
     position: relative;
     height: var(--input-checkbox-height);
     width: 3rem;
-    &:before {
-      content: '';
-      position: absolute;
-      z-index: 1;
-      height: calc(100% + 4px);
-      width: calc(100% + 4px);
-      left: 50%;
-      top: 50%;
-      background-color: var(--white-color);
-      border-radius: 50px;
-      border: 1px solid var(--input-border-color);
-      transform: translate(-50%, -50%);
-    }
+    border-radius: 50px;
+    border: 1px solid var(--input-border-color);
+    background-color: var(--input-checkbox-background);
     input {
       position: absolute;
       height: 0;
@@ -60,7 +59,7 @@ const styles = computed(() => ({
       visibility: hidden;
       &:checked {
         + .va-switcher__button {
-          left: calc(100% - var(--input-checkbox-height) - 1px);
+          left: calc(100% - var(--input-checkbox-height) + 4px);
           background-color: var(--primary-color);
         }
       }
@@ -68,13 +67,13 @@ const styles = computed(() => ({
   }
   &__button {
     z-index: 2;
-    height: var(--input-checkbox-height);
-    width: var(--input-checkbox-height);
+    height: calc(var(--input-checkbox-height) - 6px);
+    width: calc(var(--input-checkbox-height) - 6px);
     background-color: var(--input-checkbox-button-color);
     border-radius: 50px;
     position: absolute;
-    left: 1px;
-    top: 0;
+    left: 2px;
+    top: 2px;
     transition: all .2s ease-in-out;
     > * {
       position: absolute;
@@ -86,9 +85,7 @@ const styles = computed(() => ({
   &.is-checked {
     .va-switcher {
       &__control {
-        &:before {
-          border-color: var(--primary-color-lighten);
-        }
+        border-color: var(--primary-color-lighten);
       }
     }
   }

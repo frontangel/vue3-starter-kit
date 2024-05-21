@@ -8,7 +8,7 @@ import {
 } from '~/lib/layout.snippets.ts';
 </script>
 <template>
-  <div class="">
+  <div class="mb-8">
     <p>In Vue, it is better to place templates in a separate 'Layouts' directory and implement dynamic loading. Template management can be moved to the meta parameters of the router. <br />
     In the layout, we exclusively assign the function of placing components, with the exception of global functions related to this template, such as notifications.</p>
     <img :src="LayoutsFolderScreen" width="230" alt="LayoutsFolderScreen" class="mb-8" />

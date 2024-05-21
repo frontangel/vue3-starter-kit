@@ -77,7 +77,11 @@ export const useAuthStore = defineStore('auth', () => {
 
 export const asyncComponentGood = `<script lang="ts" setup>
 import { ref } from 'vue'
-import ThemeSwitcher from './ThemeSwitcher.vue'
+
+const getComponent = () => 
+  defineAsyncComponent(() => 
+    import('~/components/features/ThemeSwitcher.vue')
+  )
 
 const ruleIsTrue = ref(false)
 </script>
@@ -90,12 +94,7 @@ const ruleIsTrue = ref(false)
 </template>`
 
 export const asyncComponentNotGood = `<script lang="ts" setup>
-import { defineAsyncComponent, ref } from 'vue';
-
-const getComponent = () => 
-  defineAsyncComponent(() => 
-    import('~/components/features/ThemeSwitcher.vue')
-  )
+import ThemeSwitcher from './ThemeSwitcher.vue'
   
 const ruleIsTrue = ref(false)
 </script>
@@ -159,6 +158,4 @@ function listener(event: string) {
 bus.emit('The Tokyo Olympics has begun')
 
 // unregister the listener
-onBeforeUnmount(() => {
-  unsubscribe()
-})`
+onBeforeUnmount(unsubscribe)`

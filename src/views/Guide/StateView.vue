@@ -3,7 +3,7 @@ import { authStoreSnippet } from '~/lib/store.snippets.ts';
 import StateFolderScreen from '~/assets/img/state-folder-screen.png';
 </script>
 <template>
-  <div class="">
+  <div class="mb-8">
     <h3>The <b class="text-primary uppercase">setup</b> method in Pinia for Vue 3 streamlines state management, boosting code clarity, reactivity, and ease of maintenance.</h3>
     <ul class="no-list !mb-8">
       <li><b>Composition and Reusability:</b> Enhances state logic composition and reusability across components.</li>

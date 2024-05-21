@@ -16,6 +16,7 @@ withDefaults(defineProps<{
     <ul>
       <li v-for="(item, index) of menu" :key="index" :class="{ active: route.name === item.name, disabled: item.disabled }">
         <a v-if="item.disabled" href="#" @click.prevent>{{ item.text }}</a>
+        <a v-else-if="item.external" :href="item.to" rel="nofollow" target="_blank">{{ item.text }}</a>
         <router-link v-else :to="{ name: item.name }">{{ item.text }}</router-link>
       </li>
     </ul>

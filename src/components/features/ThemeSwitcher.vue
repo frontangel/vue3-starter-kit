@@ -30,6 +30,8 @@ function toggleTheme(value: boolean) {
     inactive-btn-color="black"
     active-btn-bg="black"
     active-btn-color="white"
+    active-bg="var(--dark-color)"
+    active-border-color="var(--dark-info-color)"
     @update:model-value="toggleTheme"
   />
 </template>
