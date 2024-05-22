@@ -32,6 +32,7 @@ export const instrumentsMenu: iMenu[] = [
   { text: 'Iconify', to: 'https://iconify.design', external: true },
   { text: 'Mock adapter', to: 'https://github.com/ctimmerm/axios-mock-adapter', external: true },
   { text: 'Pinia', to: 'https://pinia.vuejs.org/', external: true },
+  { text: 'AutoAnimate', to: 'https://auto-animate.formkit.com/', external: true },
 ]
 
 export const navMenu = [
