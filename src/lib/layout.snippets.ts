@@ -26,7 +26,16 @@ export default function useRegisterUtils() {
   return { registerLayouts }
 }`
 
-export const appLayoutTemplateSnippet = `<template>
+export const appLayoutTemplateSnippet = `<script lang="ts" setup>
+import { useRoute } from 'vue-router'
+const route = useRoute()
+
+const layout = computed(() => {
+  return (route?.meta?.layout || 'Default') + 'Layout'
+})
+</script>
+
+<template>
   <component :is="layout">
     <router-view />
   </component>

@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import LayoutsFolderScreen from '~/assets/img/layouts-folder-screen.png'
 import {
-  appLayoutSnippet,
   appLayoutTemplateSnippet, mainLayoutSnippet,
   registerLayoutSnippet,
   routerLayoutOptionSnippet
@@ -18,8 +17,7 @@ import {
         <code-snippet :code="mainLayoutSnippet" text="main.ts" />
       </va-tab>
       <va-tab label="App.vue">
-        <code-snippet text="script" :code="appLayoutSnippet" class="mb-8" />
-        <code-snippet text="template" :code="appLayoutTemplateSnippet" />
+        <code-snippet :code="appLayoutTemplateSnippet" />
       </va-tab>
       <va-tab label="Router">
         <code-snippet :code="routerLayoutOptionSnippet" text="[part].router.ts" />
