@@ -9,6 +9,7 @@ withDefaults(defineProps<{
 const slots = useSlots();
 const model = defineModel<number>({ default: 0 })
 const slotElements = computed(() => (slots.default ? slots.default() : []).map(mapSlotEl));
+const activeComponents = computed(() => slotElements.value[model.value].slot)
 function mapSlotEl (slot: any) {
   return {
     label: slot.props?.label,
@@ -34,9 +35,7 @@ provide('tabsOptions', {
       </button>
     </div>
     <div class="va-tabs__content" v-auto-animate>
-      <template v-for="(el, index) of slotElements" :key="index">
-        <component v-if="index === model" :is="el.slot" />
-      </template>
+      <component :key="model" :is="activeComponents" />
     </div>
   </div>
 </template>

@@ -28,7 +28,7 @@ function attachAuthorizationHeader(config: AxiosRequestConfig): InternalAxiosReq
     config.headers = {};
   }
   const authPaths = ['/auth/login', '/auth/refresh'];
-  if (config.url && !authPaths.some(path => config.url?.includes(path))) {
+  if (config.url && !authPaths.includes(config.url)) {
     config.headers.Authorization = `Bearer ${accessToken.value}`;
   }
   return config as InternalAxiosRequestConfig;

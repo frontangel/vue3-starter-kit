@@ -1,15 +1,15 @@
 export const tabsUsageSnippet = `<va-tabs>
   <va-tab label="Usage">
-    <code-snippet :code="tabsUsageSnippet" text="" />
-  </va-tab>
-  <va-tab label="Wrapper">
-    <code-snippet :code="routerPartSnippet" text="va-tabs.vue" />
+    <code-snippet :code="tabsUsageSnippet" />
   </va-tab>
   <va-tab>
     <template #label>
       <span>Tab - <a class="text-amber" href="https://google.com" target="_blank" @click.stop>google</a></span>
     </template>
     <code-snippet :code="rooterMiddlewareSnippet" text="va-tab.vue" />
+  </va-tab>
+  <va-tab label="Wrapper">
+    <code-snippet :code="routerPartSnippet" text="va-tabs.vue" />
   </va-tab>
 </va-tabs>`
 
@@ -18,7 +18,8 @@ import {computed, useSlots} from "vue";
 
 const slots = useSlots();
 const model = defineModel<number>({ default: 0 })
-const slotElements = computed(() => (slots.default ? slots.default() : []).map(mapSlotEl));
+const slotElements = computed(() => (slots.default ? slots.default() : []).map(mapSlotEl))
+const activeComponents = computed(() => slotElements.value[model.value].slot)
 function mapSlotEl (slot: any) {
   return {
     label: slot.props?.label,
@@ -41,9 +42,7 @@ function mapSlotEl (slot: any) {
       </button>
     </div>
     <div class="va-tabs__content" v-auto-animate>
-      <template v-for="(el, index) of slotElements">
-        <component v-if="index === model" :is="el.slot" />
-      </template>
+      <component :key="model" :is="activeComponents" />
     </div>
   </div>
 </template>
