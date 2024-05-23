@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import { configComponentsSnippet, configInputSnippet, configUsageSnippet } from '~/lib/config.snippets.ts';
+import { configComponentsSnippet, configInputSnippet, configUsageSnippet } from '~/lib/config.snippets.ts';
 import { useConfigStore } from '~/store/config.store.ts';
 
 const configStore = useConfigStore()
