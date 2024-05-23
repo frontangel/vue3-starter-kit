@@ -11,13 +11,14 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const pathSrc = path.resolve(__dirname, 'src')
-export default defineConfig({
-  resolve: {
+export default defineConfig(() => {
+  const resolve = {
     alias: {
       '~/': `${pathSrc}/`,
     },
-  },
-  plugins: [
+  }
+
+  const plugins = [
     vue(),
     Components({
       resolvers: [
@@ -79,7 +80,13 @@ export default defineConfig({
       }
     }),
     Unocss(),
-  ],
-  base: process.env.VITE_BASE_PATH
-})
+  ]
 
+  const base = process.env.VITE_BASE_PATH
+
+  return {
+    resolve,
+    plugins,
+    base
+  }
+})
